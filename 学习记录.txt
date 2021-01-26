@@ -1,0 +1,11 @@
+ 学习记录：
+ 1.根据网上的说明还需要 LoadShaders.cpp 和LoadShaders.h triangles.frag triangle.vert这四个文件 
+ 2.代码中需要设置 glewExperimental = GL_TRUE; 让glew支持所有的拓展，glewInit()也可以顺利完成所有的初始化。 
+ 3.CMakeList.txt中要连接opengl 即 link_libraries("-framework OpenGL")
+
+遇到的问题：
+上述三点可以让程序编译运行 但是由于红宝石书用的是glut 我用的是glfw 
+最后运行时候发现得改变窗口大小才会显示这两个三角形 看源码推测应该是glfw的glfwPollEvents函数，
+该函数是事件接收函数 我怀疑堵塞了,但是发现在这个函数之后打印是有显示的，那就说明非阻塞 可是却没刷新前后缓冲
+这很奇怪
+具体所有代码的含义等我学到后面应该就明白了

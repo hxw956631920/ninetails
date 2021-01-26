@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/baldwey/opengl_study/ninetails/NTMacro.h
+
+/Users/baldwey/opengl_study/ninetails/object/NTObject.cpp
+NTObject.h
+/Users/baldwey/opengl_study/ninetails/object/NTObject.h
+
+/Users/baldwey/opengl_study/ninetails/object/NTObject.h
+../NTMacro.h
+/Users/baldwey/opengl_study/ninetails/NTMacro.h
+
