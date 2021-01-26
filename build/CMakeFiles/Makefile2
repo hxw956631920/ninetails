@@ -63,16 +63,17 @@ RM = /usr/local/Cellar/cmake/3.18.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/baldwey/opengl_study/ninetails
+CMAKE_SOURCE_DIR = /Users/baldwey/ninetails
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/baldwey/opengl_study/ninetails/build
+CMAKE_BINARY_DIR = /Users/baldwey/ninetails/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
 all: CMakeFiles/ninetails.dir/all
+all: window/all
 all: object/all
 all: event/all
 all: shader/all
@@ -80,6 +81,7 @@ all: shader/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
+preinstall: window/preinstall
 preinstall: object/preinstall
 preinstall: event/preinstall
 preinstall: shader/preinstall
@@ -88,6 +90,7 @@ preinstall: shader/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/ninetails.dir/clean
+clean: window/clean
 clean: object/clean
 clean: event/clean
 clean: shader/clean
@@ -149,22 +152,41 @@ shader/clean: shader/CMakeFiles/Shader.dir/clean
 .PHONY : shader/clean
 
 #=============================================================================
+# Directory level rules for directory window
+
+# Recursive "all" directory target.
+window/all: window/CMakeFiles/Window.dir/all
+
+.PHONY : window/all
+
+# Recursive "preinstall" directory target.
+window/preinstall:
+
+.PHONY : window/preinstall
+
+# Recursive "clean" directory target.
+window/clean: window/CMakeFiles/Window.dir/clean
+
+.PHONY : window/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/ninetails.dir
 
 # All Build rule for target.
+CMakeFiles/ninetails.dir/all: window/CMakeFiles/Window.dir/all
 CMakeFiles/ninetails.dir/all: object/CMakeFiles/Object.dir/all
 CMakeFiles/ninetails.dir/all: event/CMakeFiles/Event.dir/all
 CMakeFiles/ninetails.dir/all: shader/CMakeFiles/Shader.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninetails.dir/build.make CMakeFiles/ninetails.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninetails.dir/build.make CMakeFiles/ninetails.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/baldwey/opengl_study/ninetails/build/CMakeFiles --progress-num=9,10 "Built target ninetails"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=12,13 "Built target ninetails"
 .PHONY : CMakeFiles/ninetails.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ninetails.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ninetails.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 0
 .PHONY : CMakeFiles/ninetails.dir/rule
 
 # Convenience name for target.
@@ -178,20 +200,47 @@ CMakeFiles/ninetails.dir/clean:
 .PHONY : CMakeFiles/ninetails.dir/clean
 
 #=============================================================================
+# Target rules for target window/CMakeFiles/Window.dir
+
+# All Build rule for target.
+window/CMakeFiles/Window.dir/all:
+	$(MAKE) $(MAKESILENT) -f window/CMakeFiles/Window.dir/build.make window/CMakeFiles/Window.dir/depend
+	$(MAKE) $(MAKESILENT) -f window/CMakeFiles/Window.dir/build.make window/CMakeFiles/Window.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=10,11 "Built target Window"
+.PHONY : window/CMakeFiles/Window.dir/all
+
+# Build rule for subdir invocation for target.
+window/CMakeFiles/Window.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 window/CMakeFiles/Window.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 0
+.PHONY : window/CMakeFiles/Window.dir/rule
+
+# Convenience name for target.
+Window: window/CMakeFiles/Window.dir/rule
+
+.PHONY : Window
+
+# clean rule for target.
+window/CMakeFiles/Window.dir/clean:
+	$(MAKE) $(MAKESILENT) -f window/CMakeFiles/Window.dir/build.make window/CMakeFiles/Window.dir/clean
+.PHONY : window/CMakeFiles/Window.dir/clean
+
+#=============================================================================
 # Target rules for target object/CMakeFiles/Object.dir
 
 # All Build rule for target.
 object/CMakeFiles/Object.dir/all:
 	$(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/depend
 	$(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/baldwey/opengl_study/ninetails/build/CMakeFiles --progress-num=5,6 "Built target Object"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=6,7 "Built target Object"
 .PHONY : object/CMakeFiles/Object.dir/all
 
 # Build rule for subdir invocation for target.
 object/CMakeFiles/Object.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/CMakeFiles/Object.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 0
 .PHONY : object/CMakeFiles/Object.dir/rule
 
 # Convenience name for target.
@@ -211,14 +260,14 @@ object/CMakeFiles/Object.dir/clean:
 event/CMakeFiles/Event.dir/all:
 	$(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/depend
 	$(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/baldwey/opengl_study/ninetails/build/CMakeFiles --progress-num=1,2,3,4 "Built target Event"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target Event"
 .PHONY : event/CMakeFiles/Event.dir/all
 
 # Build rule for subdir invocation for target.
 event/CMakeFiles/Event.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/CMakeFiles/Event.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 0
 .PHONY : event/CMakeFiles/Event.dir/rule
 
 # Convenience name for target.
@@ -238,14 +287,14 @@ event/CMakeFiles/Event.dir/clean:
 shader/CMakeFiles/Shader.dir/all:
 	$(MAKE) $(MAKESILENT) -f shader/CMakeFiles/Shader.dir/build.make shader/CMakeFiles/Shader.dir/depend
 	$(MAKE) $(MAKESILENT) -f shader/CMakeFiles/Shader.dir/build.make shader/CMakeFiles/Shader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/baldwey/opengl_study/ninetails/build/CMakeFiles --progress-num=7,8 "Built target Shader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=8,9 "Built target Shader"
 .PHONY : shader/CMakeFiles/Shader.dir/all
 
 # Build rule for subdir invocation for target.
 shader/CMakeFiles/Shader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shader/CMakeFiles/Shader.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 0
 .PHONY : shader/CMakeFiles/Shader.dir/rule
 
 # Convenience name for target.

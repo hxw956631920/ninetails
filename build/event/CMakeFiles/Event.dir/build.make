@@ -62,10 +62,10 @@ RM = /usr/local/Cellar/cmake/3.18.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/baldwey/opengl_study/ninetails
+CMAKE_SOURCE_DIR = /Users/baldwey/ninetails
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/baldwey/opengl_study/ninetails/build
+CMAKE_BINARY_DIR = /Users/baldwey/ninetails/build
 
 # Include any dependencies generated for this target.
 include event/CMakeFiles/Event.dir/depend.make
@@ -78,48 +78,62 @@ include event/CMakeFiles/Event.dir/flags.make
 
 event/CMakeFiles/Event.dir/EventBase.cpp.o: event/CMakeFiles/Event.dir/flags.make
 event/CMakeFiles/Event.dir/EventBase.cpp.o: ../event/EventBase.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/baldwey/opengl_study/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object event/CMakeFiles/Event.dir/EventBase.cpp.o"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Event.dir/EventBase.cpp.o -c /Users/baldwey/opengl_study/ninetails/event/EventBase.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object event/CMakeFiles/Event.dir/EventBase.cpp.o"
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Event.dir/EventBase.cpp.o -c /Users/baldwey/ninetails/event/EventBase.cpp
 
 event/CMakeFiles/Event.dir/EventBase.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Event.dir/EventBase.cpp.i"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/baldwey/opengl_study/ninetails/event/EventBase.cpp > CMakeFiles/Event.dir/EventBase.cpp.i
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/baldwey/ninetails/event/EventBase.cpp > CMakeFiles/Event.dir/EventBase.cpp.i
 
 event/CMakeFiles/Event.dir/EventBase.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Event.dir/EventBase.cpp.s"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/baldwey/opengl_study/ninetails/event/EventBase.cpp -o CMakeFiles/Event.dir/EventBase.cpp.s
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/baldwey/ninetails/event/EventBase.cpp -o CMakeFiles/Event.dir/EventBase.cpp.s
 
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: event/CMakeFiles/Event.dir/flags.make
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../event/EventKeyBoard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/baldwey/opengl_study/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Event.dir/EventKeyBoard.cpp.o -c /Users/baldwey/opengl_study/ninetails/event/EventKeyBoard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o"
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Event.dir/EventKeyBoard.cpp.o -c /Users/baldwey/ninetails/event/EventKeyBoard.cpp
 
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Event.dir/EventKeyBoard.cpp.i"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/baldwey/opengl_study/ninetails/event/EventKeyBoard.cpp > CMakeFiles/Event.dir/EventKeyBoard.cpp.i
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/baldwey/ninetails/event/EventKeyBoard.cpp > CMakeFiles/Event.dir/EventKeyBoard.cpp.i
 
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Event.dir/EventKeyBoard.cpp.s"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/baldwey/opengl_study/ninetails/event/EventKeyBoard.cpp -o CMakeFiles/Event.dir/EventKeyBoard.cpp.s
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/baldwey/ninetails/event/EventKeyBoard.cpp -o CMakeFiles/Event.dir/EventKeyBoard.cpp.s
 
 event/CMakeFiles/Event.dir/EventManager.cpp.o: event/CMakeFiles/Event.dir/flags.make
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../event/EventManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/baldwey/opengl_study/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object event/CMakeFiles/Event.dir/EventManager.cpp.o"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Event.dir/EventManager.cpp.o -c /Users/baldwey/opengl_study/ninetails/event/EventManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object event/CMakeFiles/Event.dir/EventManager.cpp.o"
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Event.dir/EventManager.cpp.o -c /Users/baldwey/ninetails/event/EventManager.cpp
 
 event/CMakeFiles/Event.dir/EventManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Event.dir/EventManager.cpp.i"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/baldwey/opengl_study/ninetails/event/EventManager.cpp > CMakeFiles/Event.dir/EventManager.cpp.i
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/baldwey/ninetails/event/EventManager.cpp > CMakeFiles/Event.dir/EventManager.cpp.i
 
 event/CMakeFiles/Event.dir/EventManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Event.dir/EventManager.cpp.s"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/baldwey/opengl_study/ninetails/event/EventManager.cpp -o CMakeFiles/Event.dir/EventManager.cpp.s
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/baldwey/ninetails/event/EventManager.cpp -o CMakeFiles/Event.dir/EventManager.cpp.s
+
+event/CMakeFiles/Event.dir/EventMouse.cpp.o: event/CMakeFiles/Event.dir/flags.make
+event/CMakeFiles/Event.dir/EventMouse.cpp.o: ../event/EventMouse.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object event/CMakeFiles/Event.dir/EventMouse.cpp.o"
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Event.dir/EventMouse.cpp.o -c /Users/baldwey/ninetails/event/EventMouse.cpp
+
+event/CMakeFiles/Event.dir/EventMouse.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Event.dir/EventMouse.cpp.i"
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/baldwey/ninetails/event/EventMouse.cpp > CMakeFiles/Event.dir/EventMouse.cpp.i
+
+event/CMakeFiles/Event.dir/EventMouse.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Event.dir/EventMouse.cpp.s"
+	cd /Users/baldwey/ninetails/build/event && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/baldwey/ninetails/event/EventMouse.cpp -o CMakeFiles/Event.dir/EventMouse.cpp.s
 
 # Object files for target Event
 Event_OBJECTS = \
 "CMakeFiles/Event.dir/EventBase.cpp.o" \
 "CMakeFiles/Event.dir/EventKeyBoard.cpp.o" \
-"CMakeFiles/Event.dir/EventManager.cpp.o"
+"CMakeFiles/Event.dir/EventManager.cpp.o" \
+"CMakeFiles/Event.dir/EventMouse.cpp.o"
 
 # External object files for target Event
 Event_EXTERNAL_OBJECTS =
@@ -127,11 +141,12 @@ Event_EXTERNAL_OBJECTS =
 event/libEvent.a: event/CMakeFiles/Event.dir/EventBase.cpp.o
 event/libEvent.a: event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o
 event/libEvent.a: event/CMakeFiles/Event.dir/EventManager.cpp.o
+event/libEvent.a: event/CMakeFiles/Event.dir/EventMouse.cpp.o
 event/libEvent.a: event/CMakeFiles/Event.dir/build.make
 event/libEvent.a: event/CMakeFiles/Event.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/baldwey/opengl_study/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libEvent.a"
-	cd /Users/baldwey/opengl_study/ninetails/build/event && $(CMAKE_COMMAND) -P CMakeFiles/Event.dir/cmake_clean_target.cmake
-	cd /Users/baldwey/opengl_study/ninetails/build/event && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Event.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libEvent.a"
+	cd /Users/baldwey/ninetails/build/event && $(CMAKE_COMMAND) -P CMakeFiles/Event.dir/cmake_clean_target.cmake
+	cd /Users/baldwey/ninetails/build/event && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Event.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 event/CMakeFiles/Event.dir/build: event/libEvent.a
@@ -139,10 +154,10 @@ event/CMakeFiles/Event.dir/build: event/libEvent.a
 .PHONY : event/CMakeFiles/Event.dir/build
 
 event/CMakeFiles/Event.dir/clean:
-	cd /Users/baldwey/opengl_study/ninetails/build/event && $(CMAKE_COMMAND) -P CMakeFiles/Event.dir/cmake_clean.cmake
+	cd /Users/baldwey/ninetails/build/event && $(CMAKE_COMMAND) -P CMakeFiles/Event.dir/cmake_clean.cmake
 .PHONY : event/CMakeFiles/Event.dir/clean
 
 event/CMakeFiles/Event.dir/depend:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/baldwey/opengl_study/ninetails /Users/baldwey/opengl_study/ninetails/event /Users/baldwey/opengl_study/ninetails/build /Users/baldwey/opengl_study/ninetails/build/event /Users/baldwey/opengl_study/ninetails/build/event/CMakeFiles/Event.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/baldwey/ninetails /Users/baldwey/ninetails/event /Users/baldwey/ninetails/build /Users/baldwey/ninetails/build/event /Users/baldwey/ninetails/build/event/CMakeFiles/Event.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : event/CMakeFiles/Event.dir/depend
 

@@ -1,6 +1,7 @@
 #ifndef __NT_EVENT_H__
 #define __NT_EVENT_H__
 
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "../NTMacro.h"
 
@@ -25,9 +26,11 @@ union EventCallBack{
 // 事件基类
 class EventBase
 {
+public:
+    virtual void doEvent() = 0;
 protected:
-    EventBase();
-    ~EventBase();
+    EventBase(){};
+    ~EventBase(){};
 protected:
     // 事件类型
     EventType _type;

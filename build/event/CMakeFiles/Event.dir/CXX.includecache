@@ -6,53 +6,87 @@
 
 #IncludeRegexTransform: 
 
-/Users/baldwey/opengl_study/ninetails/NTConstant.h
+/Users/baldwey/ninetails/NTConstant.h
 
-/Users/baldwey/opengl_study/ninetails/NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 
-/Users/baldwey/opengl_study/ninetails/event/EventBase.h
+/Users/baldwey/ninetails/event/EventBase.h
+GL/glew.h
+-
 GLFW/glfw3.h
 -
 ../NTMacro.h
-/Users/baldwey/opengl_study/ninetails/NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 
-/Users/baldwey/opengl_study/ninetails/event/EventManager.cpp
-EventManager.h
-/Users/baldwey/opengl_study/ninetails/event/EventManager.h
+/Users/baldwey/ninetails/event/EventKeyBoard.cpp
+EventKeyBoard.h
+/Users/baldwey/ninetails/event/EventKeyBoard.h
 
-/Users/baldwey/opengl_study/ninetails/event/EventManager.h
+/Users/baldwey/ninetails/event/EventKeyBoard.h
 ../ninetails.h
-/Users/baldwey/opengl_study/ninetails/ninetails.h
+/Users/baldwey/ninetails/ninetails.h
+
+/Users/baldwey/ninetails/event/EventManager.cpp
+EventManager.h
+/Users/baldwey/ninetails/event/EventManager.h
+EventKeyBoard.h
+/Users/baldwey/ninetails/event/EventKeyBoard.h
+EventMouse.h
+/Users/baldwey/ninetails/event/EventMouse.h
+
+/Users/baldwey/ninetails/event/EventManager.h
+EventBase.h
+/Users/baldwey/ninetails/event/EventBase.h
+EventKeyBoard.h
+/Users/baldwey/ninetails/event/EventKeyBoard.h
+EventMouse.h
+/Users/baldwey/ninetails/event/EventMouse.h
 vector
 -
 
-/Users/baldwey/opengl_study/ninetails/ninetails.h
+/Users/baldwey/ninetails/event/EventMouse.h
+EventBase.h
+/Users/baldwey/ninetails/event/EventBase.h
+
+/Users/baldwey/ninetails/ninetails.h
 GL/glew.h
 -
 GLFW/glfw3.h
 -
 iostream
 -
+./window/Window.h
+/Users/baldwey/ninetails/window/Window.h
 NTConstant.h
-/Users/baldwey/opengl_study/ninetails/NTConstant.h
+/Users/baldwey/ninetails/NTConstant.h
 NTMacro.h
-/Users/baldwey/opengl_study/ninetails/NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 ./object/NTObject.h
-/Users/baldwey/opengl_study/ninetails/object/NTObject.h
+/Users/baldwey/ninetails/object/NTObject.h
 ./event/EventBase.h
-/Users/baldwey/opengl_study/ninetails/event/EventBase.h
+/Users/baldwey/ninetails/event/EventBase.h
+./event/EventManager.h
+/Users/baldwey/ninetails/event/EventManager.h
 ./shader/LoadShaders.h
-/Users/baldwey/opengl_study/ninetails/shader/LoadShaders.h
+/Users/baldwey/ninetails/shader/LoadShaders.h
 
-/Users/baldwey/opengl_study/ninetails/object/NTObject.h
+/Users/baldwey/ninetails/object/NTObject.h
 ../NTMacro.h
-/Users/baldwey/opengl_study/ninetails/NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 
-/Users/baldwey/opengl_study/ninetails/shader/LoadShaders.h
+/Users/baldwey/ninetails/shader/LoadShaders.h
 GL/glew.h
 -
 iostream
 -
+
+/Users/baldwey/ninetails/window/Window.h
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 
 /usr/local/include/GL/glew.h
 stddef.h

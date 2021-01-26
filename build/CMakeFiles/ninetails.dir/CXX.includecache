@@ -6,55 +6,79 @@
 
 #IncludeRegexTransform: 
 
-../NTConstant.h
+/Users/baldwey/ninetails/NTConstant.h
 
-../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 
-../event/EventBase.h
+/Users/baldwey/ninetails/event/EventBase.h
+GL/glew.h
+-
 GLFW/glfw3.h
 -
 ../NTMacro.h
-../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 
-../event/EventManager.h
+/Users/baldwey/ninetails/event/EventKeyBoard.h
 ../ninetails.h
-../ninetails.h
+/Users/baldwey/ninetails/ninetails.h
+
+/Users/baldwey/ninetails/event/EventManager.h
+EventBase.h
+/Users/baldwey/ninetails/event/EventBase.h
+EventKeyBoard.h
+/Users/baldwey/ninetails/event/EventKeyBoard.h
+EventMouse.h
+/Users/baldwey/ninetails/event/EventMouse.h
 vector
 -
 
-../ninetails.h
+/Users/baldwey/ninetails/event/EventMouse.h
+EventBase.h
+/Users/baldwey/ninetails/event/EventBase.h
+
+/Users/baldwey/ninetails/main.cpp
+ninetails.h
+/Users/baldwey/ninetails/ninetails.h
+
+/Users/baldwey/ninetails/ninetails.h
 GL/glew.h
 -
 GLFW/glfw3.h
 -
 iostream
 -
+./window/Window.h
+/Users/baldwey/ninetails/window/Window.h
 NTConstant.h
-../NTConstant.h
+/Users/baldwey/ninetails/NTConstant.h
 NTMacro.h
-../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 ./object/NTObject.h
-../object/NTObject.h
+/Users/baldwey/ninetails/object/NTObject.h
 ./event/EventBase.h
-../event/EventBase.h
+/Users/baldwey/ninetails/event/EventBase.h
+./event/EventManager.h
+/Users/baldwey/ninetails/event/EventManager.h
 ./shader/LoadShaders.h
-../shader/LoadShaders.h
+/Users/baldwey/ninetails/shader/LoadShaders.h
 
-../object/NTObject.h
+/Users/baldwey/ninetails/object/NTObject.h
 ../NTMacro.h
-../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 
-../shader/LoadShaders.h
+/Users/baldwey/ninetails/shader/LoadShaders.h
 GL/glew.h
 -
 iostream
 -
 
-/Users/baldwey/opengl_study/ninetails/main.cpp
-iostream
+/Users/baldwey/ninetails/window/Window.h
+GL/glew.h
 -
-EventManager.h
-/Users/baldwey/opengl_study/ninetails/EventManager.h
+GLFW/glfw3.h
+-
+../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
 
 /usr/local/include/GL/glew.h
 stddef.h

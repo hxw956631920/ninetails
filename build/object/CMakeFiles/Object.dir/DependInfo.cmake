@@ -4,13 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/baldwey/opengl_study/ninetails/object/NTObject.cpp" "/Users/baldwey/opengl_study/ninetails/build/object/CMakeFiles/Object.dir/NTObject.cpp.o"
+  "/Users/baldwey/ninetails/object/NTObject.cpp" "/Users/baldwey/ninetails/build/object/CMakeFiles/Object.dir/NTObject.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/local/include"
+  ".././window"
   ".././shader"
   ".././object"
   ".././event"

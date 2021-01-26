@@ -4,22 +4,41 @@
 event/CMakeFiles/Event.dir/EventBase.cpp.o: ../NTMacro.h
 event/CMakeFiles/Event.dir/EventBase.cpp.o: ../event/EventBase.cpp
 event/CMakeFiles/Event.dir/EventBase.cpp.o: ../event/EventBase.h
+event/CMakeFiles/Event.dir/EventBase.cpp.o: /usr/local/include/GL/glew.h
 event/CMakeFiles/Event.dir/EventBase.cpp.o: /usr/local/include/GLFW/glfw3.h
 
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../NTConstant.h
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../NTMacro.h
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../event/EventBase.h
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../event/EventKeyBoard.cpp
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../event/EventKeyBoard.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../event/EventManager.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../event/EventMouse.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../ninetails.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../object/NTObject.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../shader/LoadShaders.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../window/Window.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: /usr/local/include/GL/glew.h
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: /usr/local/include/GLFW/glfw3.h
 
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../NTConstant.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../NTMacro.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../event/EventBase.h
+event/CMakeFiles/Event.dir/EventManager.cpp.o: ../event/EventKeyBoard.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../event/EventManager.cpp
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../event/EventManager.h
+event/CMakeFiles/Event.dir/EventManager.cpp.o: ../event/EventMouse.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../ninetails.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../object/NTObject.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../shader/LoadShaders.h
+event/CMakeFiles/Event.dir/EventManager.cpp.o: ../window/Window.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: /usr/local/include/GL/glew.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: /usr/local/include/GLFW/glfw3.h
+
+event/CMakeFiles/Event.dir/EventMouse.cpp.o: ../NTMacro.h
+event/CMakeFiles/Event.dir/EventMouse.cpp.o: ../event/EventBase.h
+event/CMakeFiles/Event.dir/EventMouse.cpp.o: ../event/EventMouse.cpp
+event/CMakeFiles/Event.dir/EventMouse.cpp.o: ../event/EventMouse.h
+event/CMakeFiles/Event.dir/EventMouse.cpp.o: /usr/local/include/GL/glew.h
+event/CMakeFiles/Event.dir/EventMouse.cpp.o: /usr/local/include/GLFW/glfw3.h
 

@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../event/CMakeLists.txt"
   "../object/CMakeLists.txt"
   "../shader/CMakeLists.txt"
+  "../window/CMakeLists.txt"
   "/usr/local/Cellar/cmake/3.18.2/share/cmake/Modules/CMakeCInformation.cmake"
   "/usr/local/Cellar/cmake/3.18.2/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/usr/local/Cellar/cmake/3.18.2/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -48,6 +49,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "window/CMakeFiles/CMakeDirectoryInformation.cmake"
   "object/CMakeFiles/CMakeDirectoryInformation.cmake"
   "event/CMakeFiles/CMakeDirectoryInformation.cmake"
   "shader/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -56,6 +58,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ninetails.dir/DependInfo.cmake"
+  "window/CMakeFiles/Window.dir/DependInfo.cmake"
   "object/CMakeFiles/Object.dir/DependInfo.cmake"
   "event/CMakeFiles/Event.dir/DependInfo.cmake"
   "shader/CMakeFiles/Shader.dir/DependInfo.cmake"

@@ -1,2 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libEvent.a CMakeFiles/Event.dir/EventBase.cpp.o CMakeFiles/Event.dir/EventKeyBoard.cpp.o CMakeFiles/Event.dir/EventManager.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libEvent.a

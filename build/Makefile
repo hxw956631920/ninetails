@@ -67,10 +67,10 @@ RM = /usr/local/Cellar/cmake/3.18.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/baldwey/opengl_study/ninetails
+CMAKE_SOURCE_DIR = /Users/baldwey/ninetails
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/baldwey/opengl_study/ninetails/build
+CMAKE_BINARY_DIR = /Users/baldwey/ninetails/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles /Users/baldwey/opengl_study/ninetails/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles /Users/baldwey/ninetails/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -141,6 +141,19 @@ ninetails: cmake_check_build_system
 ninetails/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninetails.dir/build.make CMakeFiles/ninetails.dir/build
 .PHONY : ninetails/fast
+
+#=============================================================================
+# Target rules for targets named Window
+
+# Build rule for target.
+Window: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Window
+.PHONY : Window
+
+# fast build rule for target.
+Window/fast:
+	$(MAKE) $(MAKESILENT) -f window/CMakeFiles/Window.dir/build.make window/CMakeFiles/Window.dir/build
+.PHONY : Window/fast
 
 #=============================================================================
 # Target rules for targets named Object
@@ -219,6 +232,7 @@ help:
 	@echo "... Event"
 	@echo "... Object"
 	@echo "... Shader"
+	@echo "... Window"
 	@echo "... ninetails"
 	@echo "... main.o"
 	@echo "... main.i"

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/baldwey/opengl_study/ninetails/event
+# Install script for directory: /Users/baldwey/ninetails/event
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

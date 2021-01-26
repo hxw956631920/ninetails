@@ -67,10 +67,10 @@ RM = /usr/local/Cellar/cmake/3.18.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/baldwey/opengl_study/ninetails
+CMAKE_SOURCE_DIR = /Users/baldwey/ninetails
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/baldwey/opengl_study/ninetails/build
+CMAKE_BINARY_DIR = /Users/baldwey/ninetails/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,14 +99,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/baldwey/opengl_study/ninetails/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles /Users/baldwey/opengl_study/ninetails/build/object//CMakeFiles/progress.marks
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 0
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles /Users/baldwey/ninetails/build/object//CMakeFiles/progress.marks
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/clean
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/clean
 .PHONY : clean
 
 # The main clean target
@@ -116,22 +116,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/preinstall
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/preinstall
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 object/CMakeFiles/Object.dir/rule:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/CMakeFiles/Object.dir/rule
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object/CMakeFiles/Object.dir/rule
 .PHONY : object/CMakeFiles/Object.dir/rule
 
 # Convenience name for target.
@@ -141,7 +141,7 @@ Object: object/CMakeFiles/Object.dir/rule
 
 # fast build rule for target.
 Object/fast:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/build
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/build
 .PHONY : Object/fast
 
 NTObject.o: NTObject.cpp.o
@@ -150,7 +150,7 @@ NTObject.o: NTObject.cpp.o
 
 # target to build an object file
 NTObject.cpp.o:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/NTObject.cpp.o
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/NTObject.cpp.o
 .PHONY : NTObject.cpp.o
 
 NTObject.i: NTObject.cpp.i
@@ -159,7 +159,7 @@ NTObject.i: NTObject.cpp.i
 
 # target to preprocess a source file
 NTObject.cpp.i:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/NTObject.cpp.i
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/NTObject.cpp.i
 .PHONY : NTObject.cpp.i
 
 NTObject.s: NTObject.cpp.s
@@ -168,7 +168,7 @@ NTObject.s: NTObject.cpp.s
 
 # target to generate assembly for a file
 NTObject.cpp.s:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/NTObject.cpp.s
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/NTObject.cpp.s
 .PHONY : NTObject.cpp.s
 
 # Help Target
@@ -194,6 +194,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,7 +1,9 @@
 #ifndef __NT_EVENTMANAGER_H__
 #define __NT_EVENTMANAGER_H__
 
-#include "../ninetails.h"
+#include "EventBase.h"
+#include "EventKeyBoard.h"
+#include "EventMouse.h"
 #include <vector>
 
 NT_NAMESPACE_BEGIN
@@ -22,7 +24,7 @@ protected:
     void init();
 private:
     static EventManager *_eventManager;
-    std::vector<EventBase *> event_vector;
+    std::vector<EventBase *> _event_vector;
 };
 
 NT_NAMESPACE_END

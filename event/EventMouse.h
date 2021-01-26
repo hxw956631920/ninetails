@@ -8,7 +8,11 @@ NT_NAMESPACE_BEGIN
 
 class EventMouse : public EventBase
 {
-
+public:
+    EventMouse *create();
+    void doEvent();
+private:
+    void callback(GLFWwindow* window, double xpos, double ypos);
 };
 
 NT_NAMESPACE_END

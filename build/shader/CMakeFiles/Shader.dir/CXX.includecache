@@ -6,31 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/Users/baldwey/opengl_study/ninetails/shader/LoadShaders.cpp
-cstdlib
--
-./LoadShaders.h
-/Users/baldwey/opengl_study/ninetails/shader/LoadShaders.h
-
-/Users/baldwey/opengl_study/ninetails/shader/LoadShaders.h
-GL/glew.h
--
-iostream
--
-
-/usr/local/include/GL/glew.h
-stddef.h
--
-inttypes.h
--
-stdint.h
--
-inttypes.h
--
-Availability.h
--
-OpenGL/glu.h
--
-GL/glu.h
--
-

@@ -67,10 +67,10 @@ RM = /usr/local/Cellar/cmake/3.18.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/baldwey/opengl_study/ninetails
+CMAKE_SOURCE_DIR = /Users/baldwey/ninetails
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/baldwey/opengl_study/ninetails/build
+CMAKE_BINARY_DIR = /Users/baldwey/ninetails/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,14 +99,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/baldwey/opengl_study/ninetails/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles /Users/baldwey/opengl_study/ninetails/build/event//CMakeFiles/progress.marks
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/opengl_study/ninetails/build/CMakeFiles 0
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles /Users/baldwey/ninetails/build/event//CMakeFiles/progress.marks
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/clean
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/clean
 .PHONY : clean
 
 # The main clean target
@@ -116,22 +116,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/preinstall
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/preinstall
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 event/CMakeFiles/Event.dir/rule:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/CMakeFiles/Event.dir/rule
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event/CMakeFiles/Event.dir/rule
 .PHONY : event/CMakeFiles/Event.dir/rule
 
 # Convenience name for target.
@@ -141,7 +141,7 @@ Event: event/CMakeFiles/Event.dir/rule
 
 # fast build rule for target.
 Event/fast:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/build
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/build
 .PHONY : Event/fast
 
 EventBase.o: EventBase.cpp.o
@@ -150,7 +150,7 @@ EventBase.o: EventBase.cpp.o
 
 # target to build an object file
 EventBase.cpp.o:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventBase.cpp.o
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventBase.cpp.o
 .PHONY : EventBase.cpp.o
 
 EventBase.i: EventBase.cpp.i
@@ -159,7 +159,7 @@ EventBase.i: EventBase.cpp.i
 
 # target to preprocess a source file
 EventBase.cpp.i:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventBase.cpp.i
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventBase.cpp.i
 .PHONY : EventBase.cpp.i
 
 EventBase.s: EventBase.cpp.s
@@ -168,7 +168,7 @@ EventBase.s: EventBase.cpp.s
 
 # target to generate assembly for a file
 EventBase.cpp.s:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventBase.cpp.s
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventBase.cpp.s
 .PHONY : EventBase.cpp.s
 
 EventKeyBoard.o: EventKeyBoard.cpp.o
@@ -177,7 +177,7 @@ EventKeyBoard.o: EventKeyBoard.cpp.o
 
 # target to build an object file
 EventKeyBoard.cpp.o:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o
 .PHONY : EventKeyBoard.cpp.o
 
 EventKeyBoard.i: EventKeyBoard.cpp.i
@@ -186,7 +186,7 @@ EventKeyBoard.i: EventKeyBoard.cpp.i
 
 # target to preprocess a source file
 EventKeyBoard.cpp.i:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventKeyBoard.cpp.i
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventKeyBoard.cpp.i
 .PHONY : EventKeyBoard.cpp.i
 
 EventKeyBoard.s: EventKeyBoard.cpp.s
@@ -195,7 +195,7 @@ EventKeyBoard.s: EventKeyBoard.cpp.s
 
 # target to generate assembly for a file
 EventKeyBoard.cpp.s:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventKeyBoard.cpp.s
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventKeyBoard.cpp.s
 .PHONY : EventKeyBoard.cpp.s
 
 EventManager.o: EventManager.cpp.o
@@ -204,7 +204,7 @@ EventManager.o: EventManager.cpp.o
 
 # target to build an object file
 EventManager.cpp.o:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventManager.cpp.o
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventManager.cpp.o
 .PHONY : EventManager.cpp.o
 
 EventManager.i: EventManager.cpp.i
@@ -213,7 +213,7 @@ EventManager.i: EventManager.cpp.i
 
 # target to preprocess a source file
 EventManager.cpp.i:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventManager.cpp.i
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventManager.cpp.i
 .PHONY : EventManager.cpp.i
 
 EventManager.s: EventManager.cpp.s
@@ -222,8 +222,35 @@ EventManager.s: EventManager.cpp.s
 
 # target to generate assembly for a file
 EventManager.cpp.s:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventManager.cpp.s
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventManager.cpp.s
 .PHONY : EventManager.cpp.s
+
+EventMouse.o: EventMouse.cpp.o
+
+.PHONY : EventMouse.o
+
+# target to build an object file
+EventMouse.cpp.o:
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventMouse.cpp.o
+.PHONY : EventMouse.cpp.o
+
+EventMouse.i: EventMouse.cpp.i
+
+.PHONY : EventMouse.i
+
+# target to preprocess a source file
+EventMouse.cpp.i:
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventMouse.cpp.i
+.PHONY : EventMouse.cpp.i
+
+EventMouse.s: EventMouse.cpp.s
+
+.PHONY : EventMouse.s
+
+# target to generate assembly for a file
+EventMouse.cpp.s:
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/EventMouse.cpp.s
+.PHONY : EventMouse.cpp.s
 
 # Help Target
 help:
@@ -243,6 +270,9 @@ help:
 	@echo "... EventManager.o"
 	@echo "... EventManager.i"
 	@echo "... EventManager.s"
+	@echo "... EventMouse.o"
+	@echo "... EventMouse.i"
+	@echo "... EventMouse.s"
 .PHONY : help
 
 
@@ -254,6 +284,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/baldwey/opengl_study/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
