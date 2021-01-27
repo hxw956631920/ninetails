@@ -6,3 +6,13 @@
 
 #IncludeRegexTransform: 
 
+/Users/baldwey/ninetails/NTMacro.h
+
+/Users/baldwey/ninetails/object/NTObject.cpp
+NTObject.h
+/Users/baldwey/ninetails/object/NTObject.h
+
+/Users/baldwey/ninetails/object/NTObject.h
+../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
+

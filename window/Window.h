@@ -4,23 +4,25 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "../NTMacro.h"
+#include "../event/EventManager.h"
 
 NT_NAMESPACE_BEGIN
 
 class MainWindow
 {
 public:
-    static GLFWwindow* create();
-    static GLFWwindow* create(int width, int height, const char* title);
-    static void run();
+    static MainWindow* create();
+    void createWindow(int width = 960, int height = 540, const char* title = "NineTails");
+    void run(void (*display)());
 private:
-    static int init();
-    static void update();
+    int init();
+    void update();
 private:
-    static GLFWwindow *_winHandle;
-    static int _width;
-    static int _height;
-    static const char* _title;
+    static MainWindow* _mainWin;
+    NT_PROPERTY_RDONLY(GLFWwindow *, _winHandle, WinHandle)
+    int _width;
+    int _height;
+    const char* _title;
 };
 
 NT_NAMESPACE_END

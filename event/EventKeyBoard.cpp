@@ -7,8 +7,9 @@ EventKeyBoard* EventKeyBoard::create()
     EventKeyBoard *event = new EventKeyBoard();
     if (event != nullptr)
     {
-        auto mainWindow = MainWindow::create();
-        glfwSetKeyCallback(mainWindow, EventKeyBoard::callback);
+        MainWindow* mainWindow = MainWindow::create();
+        GLFWwindow* handle = mainWindow->getWinHandle();
+        glfwSetKeyCallback(handle, EventKeyBoard::callback);
         return event;
     }
     return nullptr;
@@ -26,8 +27,9 @@ void EventKeyBoard::callback(GLFWwindow* window, int key, int scancode, int acti
         switch (key)
         {
         case NT_KEY_ESCAPE:
-            auto window = MainWindow::create();
-            glfwSetWindowShouldClose(window, true);
+            MainWindow *window = MainWindow::create();
+            GLFWwindow* winHandle = window->getWinHandle();
+            glfwSetWindowShouldClose(winHandle, true);
             break;
         }
     }

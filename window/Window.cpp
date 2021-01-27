@@ -4,41 +4,31 @@
 
 NT_USING_NAMESPACE
 
-GLFWwindow* MainWindow::_winHandle = nullptr;
-int MainWindow::_width = 0;
-int MainWindow::_height = 0;
-const char* MainWindow::_title = "";
+class EventManager;
 
-GLFWwindow *MainWindow::create()
+MainWindow* MainWindow::_mainWin = nullptr;
+
+MainWindow *MainWindow::create()
 {
-    if(_winHandle == nullptr)
+    if(_mainWin == nullptr)
     {
-        if (!glfwInit())
-            return nullptr;
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
-        _width = 960;
-        _height = 540;
-        _title = "NineTails";
-        _winHandle = glfwCreateWindow(_width, _height, _title, NULL, NULL);
-        init();
+        _mainWin = new MainWindow();
     }
-    return _winHandle;
+    return _mainWin;
 }
 
-GLFWwindow *MainWindow::create(int width, int height, const char* title)
+void MainWindow::createWindow(int width, int height, const char* title)
 {
-    if(_winHandle == nullptr)
+    if (_winHandle == nullptr)
     {
         if (!glfwInit())
-            return nullptr;
+            return ;
         _width = width;
         _height = height;
         _title = title;
         _winHandle = glfwCreateWindow(width, height, title, NULL, NULL);
         init();
     }
-    return _winHandle;
 }
 
 int MainWindow::init()
@@ -50,7 +40,6 @@ int MainWindow::init()
     }
     // 设置当前窗口上下文
     glfwMakeContextCurrent(_winHandle);
-    // gladLoadGL(glfwGetProcAddress);
     glfwSwapInterval(1);
 
     glewExperimental = GL_TRUE;
@@ -60,15 +49,21 @@ int MainWindow::init()
         std::cerr << "Unable to initialize GLEW ... exiting" << std::endl;
         exit(1);
     }
+    return 1;
 }
 
-void MainWindow::run()
+void MainWindow::run(void (*display)())
 {
+    // 创建事件管理器
+    EventManager *eventManager = EventManager::create();
     while (!glfwWindowShouldClose(_winHandle))
     {
-        update();
+        // update();
+        display();
+        glfwSwapBuffers(_winHandle);
+        eventManager->dealEvent();
     }
-
+    glfwDestroyWindow(_winHandle);
     glfwTerminate();
 }
 

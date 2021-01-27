@@ -4,6 +4,7 @@
 #include "EventBase.h"
 #include "EventKeyBoard.h"
 #include "EventMouse.h"
+#include "../object/NTObject.h"
 #include <vector>
 
 NT_NAMESPACE_BEGIN
@@ -18,7 +19,7 @@ public:
     void dealEvent();
 protected:
     EventManager(){};
-    EventManager(const EventManager&){};
+    EventManager(const EventManager& manager){};
     ~EventManager(){};
     EventManager& operator=(const EventManager&){};
     void init();

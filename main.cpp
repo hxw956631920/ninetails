@@ -1,6 +1,5 @@
 
 #include "ninetails.h"
-// #include "./window/Window.h"
 // #pragma comment (lib, "glew32.lib")
  
 NT_USING_NAMESPACE
@@ -13,7 +12,7 @@ enum Attrib_IDs { vPosition = 0 };
 GLuint VAOs[NumVAOs];
 GLuint Buffers[NumBuffers];
  
-const GLuint NumVertices = 12;
+const GLuint NumVertices = 6;
  
 void init()
 {
@@ -59,18 +58,9 @@ void display()
 
 int main(void)
 {
-    auto *window = MainWindow::create();
+    MainWindow *window = MainWindow::create();
+    window->createWindow();
     init();
-    // 创建事件管理器
-    EventManager *eventManager = EventManager::create();
-    
-    while (!glfwWindowShouldClose(window))
-    {
-        display();
-        glfwSwapBuffers(window);
-        eventManager->dealEvent();
-    }
-    glfwDestroyWindow(window);
-    glfwTerminate();
+    window->run(display);
     return 0;
 }
