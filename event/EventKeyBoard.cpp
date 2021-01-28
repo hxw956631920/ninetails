@@ -29,11 +29,6 @@ void EventKeyBoard::callback(GLFWwindow* window, int key, int scancode, int acti
             case NT_KEY_ESCAPE:
                 glfwSetWindowShouldClose(window, true);
                 break;
-            case NT_KEY_R:
-                int width, height;
-                // glfwGetWindowSize(window, &width, &height);
-                // glfwSetWindowSize(window, width+1, height+1);
-                break;
         }
     }
 }

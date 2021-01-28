@@ -1,6 +1,7 @@
 #ifndef __NT_CONSTANT_H__
 #define __NT_CONSTANT_H__
 
+#define _DEBUG
 /* 
 键值
 */

@@ -50,7 +50,7 @@ GLuint LoadShaders( ShaderInfo* shaders )
                 glDeleteShader( entry->shader );
                 entry->shader = 0;
             }
- 
+            std::cout << "返回返回" << endl;
             return 0;
         }
  
@@ -63,7 +63,7 @@ GLuint LoadShaders( ShaderInfo* shaders )
         glGetShaderiv( shader, GL_COMPILE_STATUS, &compiled );
         if ( !compiled ) {
  
-#ifdef _DEBUG
+// #ifdef _DEBUG
             GLsizei len;
             glGetShaderiv( shader, GL_INFO_LOG_LENGTH, &len );
  
@@ -71,7 +71,7 @@ GLuint LoadShaders( ShaderInfo* shaders )
             glGetShaderInfoLog( shader, len, &len, log );
             std::cerr << "Shader compilation failed: " << log << std::endl;
             delete [] log;
-#endif /* DEBUG */
+// #endif /* DEBUG */
  
             return 0;
         }
@@ -87,7 +87,7 @@ GLuint LoadShaders( ShaderInfo* shaders )
     glGetProgramiv( program, GL_LINK_STATUS, &linked );
     if ( !linked ) {
  
-#ifdef _DEBUG
+// #ifdef _DEBUG
         GLsizei len;
         glGetProgramiv( program, GL_INFO_LOG_LENGTH, &len );
  
@@ -96,7 +96,7 @@ GLuint LoadShaders( ShaderInfo* shaders )
         std::cerr << "Shader linking failed: " << log << std::endl;
         delete [] log;
  
-#endif /* DEBUG */
+// #endif /* DEBUG */
  
         for ( entry = shaders; entry->type != GL_NONE; ++entry ) {
             glDeleteShader( entry->shader );

@@ -21,7 +21,6 @@ protected:
     EventManager(){};
     EventManager(const EventManager& manager){};
     ~EventManager(){};
-    EventManager& operator=(const EventManager&){};
     void init();
 private:
     static EventManager *_eventManager;
