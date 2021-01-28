@@ -41,6 +41,10 @@ int MainWindow::init()
     // 设置当前窗口上下文
     glfwMakeContextCurrent(_winHandle);
     glfwSwapInterval(1);
+    // GLFWimage image[1];
+    // image[0] = load_icon("Icon.png");
+    // // 设置图标
+    // glfwSetWindowIcon(_winHandle, 1, image);
 
     glewExperimental = GL_TRUE;
     // glew初始化

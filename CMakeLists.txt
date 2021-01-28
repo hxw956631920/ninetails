@@ -22,6 +22,8 @@ add_subdirectory(object)
 add_subdirectory(event)
 # 查找shader子目录
 add_subdirectory(shader)
+# 查找image子目录
+add_subdirectory(image)
 
 
 set(CMAKE_CXX_FLAGS "-g -std=c++11 -Wformat")
@@ -30,11 +32,12 @@ set(CMAKE_CXX_FLAGS "-g -std=c++11 -Wformat")
 link_directories(/usr/local/Cellar/glew/2.1.0_1/lib)
 # glfw的库目录路径
 link_directories(/usr/local/Cellar/glfw/3.3.2/lib)
+# libpng的库目录路径
+link_directories(/usr/local/Cellar/libpng/1.6.37/lib)
 link_libraries("-framework OpenGL")
 add_executable(ninetails ${SRCS} )
 
 # 添加链接库
-# 指定glew库 glfw库
-target_link_libraries(ninetails Window)
+# 指定glew库 glfw库 libpng库
 target_link_libraries(ninetails GLEW GLFW)
-target_link_libraries(ninetails Object Event Shader)
+target_link_libraries(ninetails Window Object Event Shader Image)

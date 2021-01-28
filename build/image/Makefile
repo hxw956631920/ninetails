@@ -99,14 +99,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles /Users/baldwey/ninetails/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles /Users/baldwey/ninetails/build/image//CMakeFiles/progress.marks
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 image/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/baldwey/ninetails/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 image/clean
 .PHONY : clean
 
 # The main clean target
@@ -116,123 +116,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 image/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 image/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named ninetails
+# Convenience name for target.
+image/CMakeFiles/Image.dir/rule:
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 image/CMakeFiles/Image.dir/rule
+.PHONY : image/CMakeFiles/Image.dir/rule
 
-# Build rule for target.
-ninetails: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ninetails
-.PHONY : ninetails
+# Convenience name for target.
+Image: image/CMakeFiles/Image.dir/rule
 
-# fast build rule for target.
-ninetails/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninetails.dir/build.make CMakeFiles/ninetails.dir/build
-.PHONY : ninetails/fast
-
-#=============================================================================
-# Target rules for targets named Window
-
-# Build rule for target.
-Window: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Window
-.PHONY : Window
-
-# fast build rule for target.
-Window/fast:
-	$(MAKE) $(MAKESILENT) -f window/CMakeFiles/Window.dir/build.make window/CMakeFiles/Window.dir/build
-.PHONY : Window/fast
-
-#=============================================================================
-# Target rules for targets named Object
-
-# Build rule for target.
-Object: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Object
-.PHONY : Object
-
-# fast build rule for target.
-Object/fast:
-	$(MAKE) $(MAKESILENT) -f object/CMakeFiles/Object.dir/build.make object/CMakeFiles/Object.dir/build
-.PHONY : Object/fast
-
-#=============================================================================
-# Target rules for targets named Event
-
-# Build rule for target.
-Event: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Event
-.PHONY : Event
-
-# fast build rule for target.
-Event/fast:
-	$(MAKE) $(MAKESILENT) -f event/CMakeFiles/Event.dir/build.make event/CMakeFiles/Event.dir/build
-.PHONY : Event/fast
-
-#=============================================================================
-# Target rules for targets named Shader
-
-# Build rule for target.
-Shader: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Shader
-.PHONY : Shader
-
-# fast build rule for target.
-Shader/fast:
-	$(MAKE) $(MAKESILENT) -f shader/CMakeFiles/Shader.dir/build.make shader/CMakeFiles/Shader.dir/build
-.PHONY : Shader/fast
-
-#=============================================================================
-# Target rules for targets named Image
-
-# Build rule for target.
-Image: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Image
 .PHONY : Image
 
 # fast build rule for target.
 Image/fast:
-	$(MAKE) $(MAKESILENT) -f image/CMakeFiles/Image.dir/build.make image/CMakeFiles/Image.dir/build
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f image/CMakeFiles/Image.dir/build.make image/CMakeFiles/Image.dir/build
 .PHONY : Image/fast
 
-main.o: main.cpp.o
+Image.o: Image.cpp.o
 
-.PHONY : main.o
+.PHONY : Image.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninetails.dir/build.make CMakeFiles/ninetails.dir/main.cpp.o
-.PHONY : main.cpp.o
+Image.cpp.o:
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f image/CMakeFiles/Image.dir/build.make image/CMakeFiles/Image.dir/Image.cpp.o
+.PHONY : Image.cpp.o
 
-main.i: main.cpp.i
+Image.i: Image.cpp.i
 
-.PHONY : main.i
+.PHONY : Image.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninetails.dir/build.make CMakeFiles/ninetails.dir/main.cpp.i
-.PHONY : main.cpp.i
+Image.cpp.i:
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f image/CMakeFiles/Image.dir/build.make image/CMakeFiles/Image.dir/Image.cpp.i
+.PHONY : Image.cpp.i
 
-main.s: main.cpp.s
+Image.s: Image.cpp.s
 
-.PHONY : main.s
+.PHONY : Image.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninetails.dir/build.make CMakeFiles/ninetails.dir/main.cpp.s
-.PHONY : main.cpp.s
+Image.cpp.s:
+	cd /Users/baldwey/ninetails/build && $(MAKE) $(MAKESILENT) -f image/CMakeFiles/Image.dir/build.make image/CMakeFiles/Image.dir/Image.cpp.s
+.PHONY : Image.cpp.s
 
 # Help Target
 help:
@@ -242,15 +179,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Event"
 	@echo "... Image"
-	@echo "... Object"
-	@echo "... Shader"
-	@echo "... Window"
-	@echo "... ninetails"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Image.o"
+	@echo "... Image.i"
+	@echo "... Image.s"
 .PHONY : help
 
 
@@ -262,6 +194,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/baldwey/ninetails/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,6 +1,9 @@
 #ifndef __NT_CONSTANT_H__
 #define __NT_CONSTANT_H__
 
+/* 
+键值
+*/
 #define 	NT_KEY_UNKNOWN   -1
  
 #define 	NT_KEY_SPACE   32

@@ -18,10 +18,6 @@ GLFW/glfw3.h
 ../NTMacro.h
 /Users/baldwey/ninetails/NTMacro.h
 
-/Users/baldwey/ninetails/event/EventKeyBoard.cpp
-EventKeyBoard.h
-/Users/baldwey/ninetails/event/EventKeyBoard.h
-
 /Users/baldwey/ninetails/event/EventKeyBoard.h
 ../ninetails.h
 /Users/baldwey/ninetails/ninetails.h
@@ -41,6 +37,16 @@ vector
 /Users/baldwey/ninetails/event/EventMouse.h
 EventBase.h
 /Users/baldwey/ninetails/event/EventBase.h
+
+/Users/baldwey/ninetails/image/Image.cpp
+Image.h
+/Users/baldwey/ninetails/image/Image.h
+
+/Users/baldwey/ninetails/image/Image.h
+../ninetails.h
+/Users/baldwey/ninetails/ninetails.h
+png.h
+-
 
 /Users/baldwey/ninetails/ninetails.h
 GL/glew.h
@@ -143,4 +149,24 @@ GL/glext.h
 -
 GL/glu.h
 -
+
+/usr/local/include/png.h
+pnglibconf.h
+/usr/local/include/pnglibconf.h
+pngconf.h
+/usr/local/include/pngconf.h
+
+/usr/local/include/pngconf.h
+limits.h
+-
+stddef.h
+-
+stdio.h
+-
+setjmp.h
+-
+time.h
+-
+
+/usr/local/include/pnglibconf.h
 

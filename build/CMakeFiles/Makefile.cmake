@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.18.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.18.2/CMakeSystem.cmake"
   "../event/CMakeLists.txt"
+  "../image/CMakeLists.txt"
   "../object/CMakeLists.txt"
   "../shader/CMakeLists.txt"
   "../window/CMakeLists.txt"
@@ -53,6 +54,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "object/CMakeFiles/CMakeDirectoryInformation.cmake"
   "event/CMakeFiles/CMakeDirectoryInformation.cmake"
   "shader/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "image/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -62,4 +64,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "object/CMakeFiles/Object.dir/DependInfo.cmake"
   "event/CMakeFiles/Event.dir/DependInfo.cmake"
   "shader/CMakeFiles/Shader.dir/DependInfo.cmake"
+  "image/CMakeFiles/Image.dir/DependInfo.cmake"
   )
