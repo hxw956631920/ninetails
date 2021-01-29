@@ -10,6 +10,9 @@ event/CMakeFiles/Event.dir/EventBase.cpp.o
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o
  /Users/baldwey/ninetails/NTConstant.h
  /Users/baldwey/ninetails/NTMacro.h
+ /Users/baldwey/ninetails/data/Color.h
+ /Users/baldwey/ninetails/data/Vec.h
+ /Users/baldwey/ninetails/data/Vec_Color.h
  /Users/baldwey/ninetails/event/EventBase.h
  /Users/baldwey/ninetails/event/EventKeyBoard.cpp
  /Users/baldwey/ninetails/event/EventKeyBoard.h
@@ -24,6 +27,9 @@ event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o
 event/CMakeFiles/Event.dir/EventManager.cpp.o
  /Users/baldwey/ninetails/NTConstant.h
  /Users/baldwey/ninetails/NTMacro.h
+ /Users/baldwey/ninetails/data/Color.h
+ /Users/baldwey/ninetails/data/Vec.h
+ /Users/baldwey/ninetails/data/Vec_Color.h
  /Users/baldwey/ninetails/event/EventBase.h
  /Users/baldwey/ninetails/event/EventKeyBoard.h
  /Users/baldwey/ninetails/event/EventManager.cpp

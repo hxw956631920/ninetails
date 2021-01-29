@@ -9,6 +9,9 @@ event/CMakeFiles/Event.dir/EventBase.cpp.o: /usr/local/include/GLFW/glfw3.h
 
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../NTConstant.h
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../NTMacro.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../data/Color.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../data/Vec.h
+event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../data/Vec_Color.h
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../event/EventBase.h
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../event/EventKeyBoard.cpp
 event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: ../event/EventKeyBoard.h
@@ -23,6 +26,9 @@ event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o: /usr/local/include/GLFW/glfw3.h
 
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../NTConstant.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../NTMacro.h
+event/CMakeFiles/Event.dir/EventManager.cpp.o: ../data/Color.h
+event/CMakeFiles/Event.dir/EventManager.cpp.o: ../data/Vec.h
+event/CMakeFiles/Event.dir/EventManager.cpp.o: ../data/Vec_Color.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../event/EventBase.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../event/EventKeyBoard.h
 event/CMakeFiles/Event.dir/EventManager.cpp.o: ../event/EventManager.cpp

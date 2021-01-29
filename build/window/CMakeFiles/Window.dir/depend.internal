@@ -4,6 +4,9 @@
 window/CMakeFiles/Window.dir/Window.cpp.o
  /Users/baldwey/ninetails/NTConstant.h
  /Users/baldwey/ninetails/NTMacro.h
+ /Users/baldwey/ninetails/data/Color.h
+ /Users/baldwey/ninetails/data/Vec.h
+ /Users/baldwey/ninetails/data/Vec_Color.h
  /Users/baldwey/ninetails/event/EventBase.h
  /Users/baldwey/ninetails/event/EventKeyBoard.h
  /Users/baldwey/ninetails/event/EventManager.h

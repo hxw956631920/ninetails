@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/baldwey/ninetails/NTMacro.h
+
+/Users/baldwey/ninetails/data/Vec.cpp
+Vec.h
+/Users/baldwey/ninetails/data/Vec.h
+
+/Users/baldwey/ninetails/data/Vec.h
+../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
+

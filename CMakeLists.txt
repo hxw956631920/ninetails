@@ -12,6 +12,7 @@ include_directories(./window)
 include_directories(./shader)
 include_directories(./object)
 include_directories(./event)
+include_directories(./data)
 # 查找当前目录下的所有源文件
 aux_source_directory("./" SRCS)
 # 查找window子目录
@@ -24,6 +25,8 @@ add_subdirectory(event)
 add_subdirectory(shader)
 # 查找image子目录
 add_subdirectory(image)
+# 查找data子目录
+add_subdirectory(data)
 
 
 set(CMAKE_CXX_FLAGS "-g -std=c++11 -Wformat")
@@ -40,4 +43,4 @@ add_executable(ninetails ${SRCS} )
 # 添加链接库
 # 指定glew库 glfw库 libpng库
 target_link_libraries(ninetails GLEW GLFW)
-target_link_libraries(ninetails Window Object Event Shader Image)
+target_link_libraries(ninetails Window Object Event Shader Image Data)

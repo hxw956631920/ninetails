@@ -1,8 +1,10 @@
 #include <cstdlib>
  
-#include "./LoadShaders.h"
+#include "LoadShaders.h"
  
-static const GLchar* ReadShader( const char* filename )
+NT_USING_NAMESPACE
+ 
+const GLchar* readShader(const char* filename)
 {
 #ifdef WIN32
     FILE* infile;
@@ -12,12 +14,10 @@ static const GLchar* ReadShader( const char* filename )
 #endif // WIN32
  
     if ( !infile ) {
-#ifdef _DEBUG
         std::cerr << "Unable to open file '" << filename << "'" << std::endl;
-#endif /* DEBUG */
         return NULL;
     }
- 
+
     fseek( infile, 0, SEEK_END );
     int len = ftell( infile );
     fseek( infile, 0, SEEK_SET );
@@ -32,79 +32,131 @@ static const GLchar* ReadShader( const char* filename )
     return const_cast<const GLchar*>(source);
 }
  
-GLuint LoadShaders( ShaderInfo* shaders )
+void Shader::createShaderByFile(const char* fileName)
 {
-    if ( shaders == NULL ) { return 0; }
- 
-    GLuint program = glCreateProgram();
- 
-    ShaderInfo* entry = shaders;
-    while ( entry->type != GL_NONE ) {
-        GLuint shader = glCreateShader( entry->type );
- 
-        entry->shader = shader;
- 
-        const GLchar* source = ReadShader( entry->filename );
-        if ( source == NULL ) {
-            for ( entry = shaders; entry->type != GL_NONE; ++entry ) {
-                glDeleteShader( entry->shader );
-                entry->shader = 0;
-            }
-            std::cout << "返回返回" << endl;
-            return 0;
-        }
- 
-        glShaderSource( shader, 1, &source, NULL );
-        delete [] source;
- 
-        glCompileShader( shader );
- 
-        GLint compiled;
-        glGetShaderiv( shader, GL_COMPILE_STATUS, &compiled );
-        if ( !compiled ) {
- 
-// #ifdef _DEBUG
-            GLsizei len;
-            glGetShaderiv( shader, GL_INFO_LOG_LENGTH, &len );
- 
-            GLchar* log = new GLchar[len+1];
-            glGetShaderInfoLog( shader, len, &len, log );
-            std::cerr << "Shader compilation failed: " << log << std::endl;
-            delete [] log;
-// #endif /* DEBUG */
- 
-            return 0;
-        }
- 
-        glAttachShader( program, shader );
-         
-        ++entry;
+    char vertFileName[512] = "";
+    char fragFileName[512] = "";
+    strcpy(vertFileName, fileName);
+    strcpy(fragFileName, fileName);
+    int success;
+    char infoLog[512];
+    // 创建shader程序段
+    _programID = glCreateProgram();
+
+    // 创建定点着色器
+    GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+    const GLchar* vertCode = readShader(strcat(vertFileName, ".vert"));
+    glShaderSource(vertexShader, 1, &vertCode, NULL);
+    glCompileShader(vertexShader);
+    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+    // 编译错误
+    if (!success)
+    {
+        glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+        std::cout << "ERROR:SHADER::VERTEX::COMPLIATION_FAILED\n" << infoLog << std::endl;
     }
-     
-    glLinkProgram( program );
- 
-    GLint linked;
-    glGetProgramiv( program, GL_LINK_STATUS, &linked );
-    if ( !linked ) {
- 
-// #ifdef _DEBUG
-        GLsizei len;
-        glGetProgramiv( program, GL_INFO_LOG_LENGTH, &len );
- 
-        GLchar* log = new GLchar[len+1];
-        glGetProgramInfoLog( program, len, &len, log );
-        std::cerr << "Shader linking failed: " << log << std::endl;
-        delete [] log;
- 
-// #endif /* DEBUG */
- 
-        for ( entry = shaders; entry->type != GL_NONE; ++entry ) {
-            glDeleteShader( entry->shader );
-            entry->shader = 0;
-        }
-         
-        return 0;
+    
+    // 创建片元着色器
+    GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+    const GLchar* fragCode = readShader(strcat(fragFileName, ".frag"));
+    glShaderSource(fragmentShader, 1, &fragCode, NULL);
+    glCompileShader(fragmentShader);
+    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+    // 编译错误
+    if (!success)
+    {
+        glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+        std::cout << "ERROR:SHADER::FRAGMENT::COMPLIATION_FAILED\n" << infoLog << std::endl;
     }
- 
-    return program;
+
+    // 附加到program上
+    glAttachShader(_programID, vertexShader);
+    glAttachShader(_programID, fragmentShader);
+    // 链接
+    glLinkProgram(_programID);
+
+    // 获取链接结果
+    glGetProgramiv(_programID, GL_LINK_STATUS, &success);
+    if (!success)
+    {
+        glGetProgramInfoLog(_programID, 512, NULL, infoLog);
+        std::cout << "ERROR:SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+    }
+    
+    // 删除shader片段
+    glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
+}
+
+void Shader::createShaderByChars(const char* vert, const char* frag)
+{
+    int success;
+    char infoLog[512];
+    // 创建shader程序段
+    _programID = glCreateProgram();
+
+    // 创建定点着色器
+    GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertexShader, 1, &vert, NULL);
+    glCompileShader(vertexShader);
+    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+    // 编译错误
+    if (!success)
+    {
+        glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+        std::cout << "ERROR:SHADER::VERTEX::COMPLIATION_FAILED\n" << infoLog << std::endl;
+    }
+    
+    // 创建片元着色器
+    GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragmentShader, 1, &frag, NULL);
+    glCompileShader(fragmentShader);
+    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+    // 编译错误
+    if (!success)
+    {
+        glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+        std::cout << "ERROR:SHADER::FRAGMENT::COMPLIATION_FAILED\n" << infoLog << std::endl;
+    }
+
+    // 附加到program上
+    glAttachShader(_programID, vertexShader);
+    glAttachShader(_programID, fragmentShader);
+    // 链接
+    glLinkProgram(_programID);
+
+    // 获取链接结果
+    glGetProgramiv(_programID, GL_LINK_STATUS, &success);
+    if (!success)
+    {
+        glGetProgramInfoLog(_programID, 512, NULL, infoLog);
+        std::cout << "ERROR:SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+    }
+    
+    // 删除shader片段
+    glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
+}
+
+void Shader::use()
+{
+    glUseProgram(_programID);
+}
+
+void Shader::setUniformBool(const char* name, bool value)
+{
+    GLuint location = glGetUniformLocation(_programID, name);
+    glUniform1i(location, (int)value);
+}
+
+void Shader::setUniform3f(const char* name, Vec3 vec)
+{
+    GLuint location = glGetUniformLocation(_programID, name);
+    glUniform3f(location, vec.x, vec.y, vec.z);
+}
+
+void Shader::setUniform1f(const char* name, float value)
+{
+    GLuint location = glGetUniformLocation(_programID, name);
+    glUniform1f(location, value);
 }

@@ -3,6 +3,9 @@
 
 image/CMakeFiles/Image.dir/Image.cpp.o: ../NTConstant.h
 image/CMakeFiles/Image.dir/Image.cpp.o: ../NTMacro.h
+image/CMakeFiles/Image.dir/Image.cpp.o: ../data/Color.h
+image/CMakeFiles/Image.dir/Image.cpp.o: ../data/Vec.h
+image/CMakeFiles/Image.dir/Image.cpp.o: ../data/Vec_Color.h
 image/CMakeFiles/Image.dir/Image.cpp.o: ../event/EventBase.h
 image/CMakeFiles/Image.dir/Image.cpp.o: ../event/EventKeyBoard.h
 image/CMakeFiles/Image.dir/Image.cpp.o: ../event/EventManager.h

@@ -3,6 +3,9 @@
 
 CMakeFiles/ninetails.dir/main.cpp.o: ../NTConstant.h
 CMakeFiles/ninetails.dir/main.cpp.o: ../NTMacro.h
+CMakeFiles/ninetails.dir/main.cpp.o: ../data/Color.h
+CMakeFiles/ninetails.dir/main.cpp.o: ../data/Vec.h
+CMakeFiles/ninetails.dir/main.cpp.o: ../data/Vec_Color.h
 CMakeFiles/ninetails.dir/main.cpp.o: ../event/EventBase.h
 CMakeFiles/ninetails.dir/main.cpp.o: ../event/EventKeyBoard.h
 CMakeFiles/ninetails.dir/main.cpp.o: ../event/EventManager.h

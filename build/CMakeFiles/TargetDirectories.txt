@@ -16,3 +16,6 @@
 /Users/baldwey/ninetails/build/image/CMakeFiles/rebuild_cache.dir
 /Users/baldwey/ninetails/build/image/CMakeFiles/edit_cache.dir
 /Users/baldwey/ninetails/build/image/CMakeFiles/Image.dir
+/Users/baldwey/ninetails/build/data/CMakeFiles/rebuild_cache.dir
+/Users/baldwey/ninetails/build/data/CMakeFiles/edit_cache.dir
+/Users/baldwey/ninetails/build/data/CMakeFiles/Data.dir

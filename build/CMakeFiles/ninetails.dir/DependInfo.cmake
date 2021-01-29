@@ -15,6 +15,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   ".././shader"
   ".././object"
   ".././event"
+  ".././data"
   )
 
 # Targets to which this target links.
@@ -24,6 +25,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/Users/baldwey/ninetails/build/event/CMakeFiles/Event.dir/DependInfo.cmake"
   "/Users/baldwey/ninetails/build/shader/CMakeFiles/Shader.dir/DependInfo.cmake"
   "/Users/baldwey/ninetails/build/image/CMakeFiles/Image.dir/DependInfo.cmake"
+  "/Users/baldwey/ninetails/build/data/CMakeFiles/Data.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

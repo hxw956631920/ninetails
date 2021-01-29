@@ -3,6 +3,9 @@
 
 window/CMakeFiles/Window.dir/Window.cpp.o: ../NTConstant.h
 window/CMakeFiles/Window.dir/Window.cpp.o: ../NTMacro.h
+window/CMakeFiles/Window.dir/Window.cpp.o: ../data/Color.h
+window/CMakeFiles/Window.dir/Window.cpp.o: ../data/Vec.h
+window/CMakeFiles/Window.dir/Window.cpp.o: ../data/Vec_Color.h
 window/CMakeFiles/Window.dir/Window.cpp.o: ../event/EventBase.h
 window/CMakeFiles/Window.dir/Window.cpp.o: ../event/EventKeyBoard.h
 window/CMakeFiles/Window.dir/Window.cpp.o: ../event/EventManager.h

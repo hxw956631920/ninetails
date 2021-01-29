@@ -10,6 +10,28 @@
 
 /Users/baldwey/ninetails/NTMacro.h
 
+/Users/baldwey/ninetails/data/Color.h
+../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
+iostream
+-
+
+/Users/baldwey/ninetails/data/Vec.h
+../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
+
+/Users/baldwey/ninetails/data/Vec_Color.h
+../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+Vec.h
+/Users/baldwey/ninetails/data/Vec.h
+Color.h
+/Users/baldwey/ninetails/data/Color.h
+
 /Users/baldwey/ninetails/event/EventBase.h
 GL/glew.h
 -
@@ -43,8 +65,6 @@ GL/glew.h
 -
 GLFW/glfw3.h
 -
-iostream
--
 ./window/Window.h
 /Users/baldwey/ninetails/window/Window.h
 NTConstant.h
@@ -59,16 +79,22 @@ NTMacro.h
 /Users/baldwey/ninetails/event/EventManager.h
 ./shader/LoadShaders.h
 /Users/baldwey/ninetails/shader/LoadShaders.h
+./data/Vec_Color.h
+/Users/baldwey/ninetails/data/Vec_Color.h
 
 /Users/baldwey/ninetails/object/NTObject.h
 ../NTMacro.h
 /Users/baldwey/ninetails/NTMacro.h
 
 /Users/baldwey/ninetails/shader/LoadShaders.h
-GL/glew.h
--
 iostream
 -
+string.h
+-
+GL/glew.h
+-
+../data/Vec.h
+/Users/baldwey/ninetails/data/Vec.h
 
 /Users/baldwey/ninetails/window/Window.cpp
 Window.h

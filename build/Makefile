@@ -207,6 +207,19 @@ Image/fast:
 	$(MAKE) $(MAKESILENT) -f image/CMakeFiles/Image.dir/build.make image/CMakeFiles/Image.dir/build
 .PHONY : Image/fast
 
+#=============================================================================
+# Target rules for targets named Data
+
+# Build rule for target.
+Data: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Data
+.PHONY : Data
+
+# fast build rule for target.
+Data/fast:
+	$(MAKE) $(MAKESILENT) -f data/CMakeFiles/Data.dir/build.make data/CMakeFiles/Data.dir/build
+.PHONY : Data/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -242,6 +255,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Data"
 	@echo "... Event"
 	@echo "... Image"
 	@echo "... Object"

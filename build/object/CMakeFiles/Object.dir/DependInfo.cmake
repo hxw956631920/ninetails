@@ -15,6 +15,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   ".././shader"
   ".././object"
   ".././event"
+  ".././data"
   )
 
 # Targets to which this target links.

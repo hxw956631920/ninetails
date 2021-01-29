@@ -103,6 +103,7 @@ ninetails: object/libObject.a
 ninetails: event/libEvent.a
 ninetails: shader/libShader.a
 ninetails: image/libImage.a
+ninetails: data/libData.a
 ninetails: CMakeFiles/ninetails.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/baldwey/ninetails/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ninetails"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ninetails.dir/link.txt --verbose=$(VERBOSE)

@@ -3,7 +3,6 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <iostream>
 #include "./window/Window.h"
 #include "NTConstant.h"
 #include "NTMacro.h"
@@ -11,5 +10,6 @@
 #include "./event/EventBase.h"
 #include "./event/EventManager.h"
 #include "./shader/LoadShaders.h"
+#include "./data/Vec_Color.h"
 
 #endif

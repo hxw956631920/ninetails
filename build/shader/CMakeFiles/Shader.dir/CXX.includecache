@@ -6,17 +6,27 @@
 
 #IncludeRegexTransform: 
 
+/Users/baldwey/ninetails/NTMacro.h
+
+/Users/baldwey/ninetails/data/Vec.h
+../NTMacro.h
+/Users/baldwey/ninetails/NTMacro.h
+
 /Users/baldwey/ninetails/shader/LoadShaders.cpp
 cstdlib
 -
-./LoadShaders.h
+LoadShaders.h
 /Users/baldwey/ninetails/shader/LoadShaders.h
 
 /Users/baldwey/ninetails/shader/LoadShaders.h
-GL/glew.h
--
 iostream
 -
+string.h
+-
+GL/glew.h
+-
+../data/Vec.h
+/Users/baldwey/ninetails/data/Vec.h
 
 /usr/local/include/GL/glew.h
 stddef.h

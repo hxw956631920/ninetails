@@ -1,6 +1,8 @@
 #ifndef __NT_MACRO_H__
 #define __NT_MACRO_H__
 
+#define  BUFFER_OFFSET(offset) ((void *)(offset))
+
 #define NT_NAMESPACE_BEGIN          namespace NT {
 #define NT_NAMESPACE_END            }
 #define NT_USING_NAMESPACE          using namespace NT;

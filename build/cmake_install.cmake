@@ -44,6 +44,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/baldwey/ninetails/build/event/cmake_install.cmake")
   include("/Users/baldwey/ninetails/build/shader/cmake_install.cmake")
   include("/Users/baldwey/ninetails/build/image/cmake_install.cmake")
+  include("/Users/baldwey/ninetails/build/data/cmake_install.cmake")
 
 endif()
 
