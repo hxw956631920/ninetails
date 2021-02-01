@@ -15,7 +15,7 @@ public:
     Vec_Color(){};
     Vec_Color(Vec2 &vec, Color3f &color);
     Vec_Color(Vec3 &vec, Color3f &color);
-    operator GLfloat**();
+    // operator GLfloat*[]();
 private:
     Vec3 _vec;
     Color3f _color;

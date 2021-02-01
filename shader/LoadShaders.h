@@ -23,6 +23,7 @@ public:
     void setUniformBool(const char* name, bool value);
     void setUniform3f(const char* name, Vec3 vec);
     void setUniform1f(const char* name, float value);
+    void setUniform1i(const char* name, int value);
     // friend const GLchar* readShader(const char* filename);
 private:
     // shader程序段id
