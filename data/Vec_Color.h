@@ -2,8 +2,8 @@
 #define __NT_VEC_COLOR_H__
 
 #include "../NTMacro.h"
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include "lib/glew/include/glew.h"
+#include "lib/glfw/include/glfw3.h"
 #include "Vec.h"
 #include "Color.h"
 

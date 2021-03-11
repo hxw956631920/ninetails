@@ -1,8 +1,8 @@
 #ifndef __NT_EXAMPLE1_H__
 #define __NT_EXAMPLE1_H__
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include "lib/glew/include/glew.h"
+#include "lib/glfw/include/glfw3.h"
 #include "../shader/LoadShaders.h"
 #include "NTMacro.h"
 #include "NTConstant.h"

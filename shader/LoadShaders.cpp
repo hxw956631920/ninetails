@@ -4,48 +4,19 @@
  
 NT_USING_NAMESPACE
  
-const GLchar* readShader(const char* filename)
-{
-#ifdef WIN32
-    FILE* infile;
-    fopen_s( &infile, filename, "rb" );
-#else
-    FILE* infile = fopen( filename, "rb" );
-#endif // WIN32
- 
-    if ( !infile ) {
-        std::cerr << "Unable to open file '" << filename << "'" << std::endl;
-        return NULL;
-    }
-
-    fseek( infile, 0, SEEK_END );
-    int len = ftell( infile );
-    fseek( infile, 0, SEEK_SET );
- 
-    GLchar* source = new GLchar[len+1];
- 
-    fread( source, 1, len, infile );
-    fclose( infile );
- 
-    source[len] = 0;
- 
-    return const_cast<const GLchar*>(source);
-}
- 
-void Shader::createShaderByFile(const char* fileName)
+void Shader::createShaderByFile(std::string fileName)
 {
     char vertFileName[512] = "";
     char fragFileName[512] = "";
-    strcpy(vertFileName, fileName);
-    strcpy(fragFileName, fileName);
     int success;
     char infoLog[512];
     // 创建shader程序段
     _programID = glCreateProgram();
 
+    
     // 创建定点着色器
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    const GLchar* vertCode = readShader(strcat(vertFileName, ".vert"));
+    const GLchar* vertCode = FileUtils::readFile(fileName+".vert");
     glShaderSource(vertexShader, 1, &vertCode, NULL);
     glCompileShader(vertexShader);
     glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
@@ -58,7 +29,7 @@ void Shader::createShaderByFile(const char* fileName)
     
     // 创建片元着色器
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    const GLchar* fragCode = readShader(strcat(fragFileName, ".frag"));
+    const GLchar* fragCode = FileUtils::readFile(fileName+".frag");
     glShaderSource(fragmentShader, 1, &fragCode, NULL);
     glCompileShader(fragmentShader);
     glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);

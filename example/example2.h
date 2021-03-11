@@ -2,8 +2,8 @@
 #define __NT_EXAMPLE2_H__
 
 #include "../image/stb_image.h"
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include "lib/glew/include/glew.h"
+#include "lib/glfw/include/glfw3.h"
 #include "../shader/LoadShaders.h"
 #include "NTMacro.h"
 #include "NTConstant.h"

@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Event.dir/EventBase.cpp.o"
   "CMakeFiles/Event.dir/EventKeyBoard.cpp.o"
   "CMakeFiles/Event.dir/EventManager.cpp.o"
+  "CMakeFiles/Event.dir/EventMouse.cpp.o"
   "libEvent.a"
   "libEvent.pdb"
 )

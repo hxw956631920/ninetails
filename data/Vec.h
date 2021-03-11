@@ -2,6 +2,7 @@
 #define __NT_VEC2_H__
 
 #include "../NTMacro.h"
+#include <iostream>
 
 NT_NAMESPACE_BEGIN
 

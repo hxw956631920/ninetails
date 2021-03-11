@@ -4,18 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/baldwey/opengl_study/ninetails/event/EventBase.cpp" "/Users/baldwey/opengl_study/ninetails/event/CMakeFiles/Event.dir/EventBase.cpp.o"
-  "/Users/baldwey/opengl_study/ninetails/event/EventKeyBoard.cpp" "/Users/baldwey/opengl_study/ninetails/event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o"
-  "/Users/baldwey/opengl_study/ninetails/event/EventManager.cpp" "/Users/baldwey/opengl_study/ninetails/event/CMakeFiles/Event.dir/EventManager.cpp.o"
+  "/Users/baldwey/个人程序/ninetails/event/EventBase.cpp" "/Users/baldwey/个人程序/ninetails/event/CMakeFiles/Event.dir/EventBase.cpp.o"
+  "/Users/baldwey/个人程序/ninetails/event/EventKeyBoard.cpp" "/Users/baldwey/个人程序/ninetails/event/CMakeFiles/Event.dir/EventKeyBoard.cpp.o"
+  "/Users/baldwey/个人程序/ninetails/event/EventManager.cpp" "/Users/baldwey/个人程序/ninetails/event/CMakeFiles/Event.dir/EventManager.cpp.o"
+  "/Users/baldwey/个人程序/ninetails/event/EventMouse.cpp" "/Users/baldwey/个人程序/ninetails/event/CMakeFiles/Event.dir/EventMouse.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/include"
-  "./shader"
-  "./object"
-  "./event"
+  "."
   )
 
 # Targets to which this target links.

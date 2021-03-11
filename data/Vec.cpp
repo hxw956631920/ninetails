@@ -29,6 +29,7 @@ float Vec2::operator[](int index)
         return this->x;
     else if (index == 1) 
         return this->y;
+    return (float)NULL;
 }
 
 
@@ -87,4 +88,5 @@ float Vec3::operator[](int index)
         return this->y;
     else if (index == 2)
         return this->z;
+    return (float)NULL;
 }

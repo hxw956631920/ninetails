@@ -1,25 +1,33 @@
 #ifndef __NT_IMAGE_H__
 #define __NT_IMAGE_H__
 
-#include "../ninetails.h"
-#include <png.h>
+#include "../NTMacro.h"
+#include "../data/FileUtils.h"
+#include "ntlibpng.h"
 
 NT_NAMESPACE_BEGIN
 
-typedef struct NT_pngstruct
-{
-    // libpng结构体
-    png_structp png_ptr;
-    // libpng信息
-    png_infop info_ptr;
-} NT_pngstruct;
+enum IMAGE_FORMAT{
+    PNG,
+    JPG,
+    UNDEFINE
+};
 
 class Image
 {
 public:
-    static void loadBatchImage(const char* fileName);
+    void loadImage(const std::string fileName);
 private:
-    static std::vector<NT_pngstruct> pngVec;
+    // 获取图像格式 
+    IMAGE_FORMAT getImagePormat();
+    // 是否为png
+    bool isPng();
+    // 是否为jpg
+    bool isJpeg();
+    // 加载png图像至内存
+
+private:
+    NT_PROPERTY_RDONLY(const char*, _data, Data)
 };
 
 NT_NAMESPACE_END

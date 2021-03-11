@@ -1,8 +1,8 @@
 #ifndef __NT_EVENT_H__
 #define __NT_EVENT_H__
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include "lib/glew/include/glew.h"
+#include "lib/glfw/include/glfw3.h"
 #include "../NTMacro.h"
 
 NT_NAMESPACE_BEGIN

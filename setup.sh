@@ -1,4 +1,5 @@
 
+
 if [ ! -d build ];then
     mkdir build
 else
@@ -9,4 +10,6 @@ cd build
 make
 cp ninetails ../
 cd ..
-rm -r build
+if [ "$1" = "clean" ];then
+    rm -r build
+fi

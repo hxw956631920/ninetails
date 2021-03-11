@@ -1,4 +1,4 @@
-# Install script for directory: /Users/baldwey/opengl_study/ninetails/object
+# Install script for directory: /Users/baldwey/个人程序/ninetails/object
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

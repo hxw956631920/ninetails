@@ -3,8 +3,9 @@
 
 #include <iostream>
 #include <string.h>
-#include <GL/glew.h>
+#include "lib/glew/include/glew.h"
 #include "../data/Vec.h"
+#include "../data/FileUtils.h"
 using namespace std;
 
 NT_NAMESPACE_BEGIN
@@ -13,7 +14,7 @@ class Shader
 {
 public:
     // 通过文件创建shader
-    void createShaderByFile(const char* fileName);
+    void createShaderByFile(std::string fileName);
     // 通过字符串创建shader
     void createShaderByChars(const char* vert, const char* frag);
     // 使用程序段
