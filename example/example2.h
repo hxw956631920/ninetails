@@ -1,10 +1,10 @@
 #ifndef __NT_EXAMPLE2_H__
 #define __NT_EXAMPLE2_H__
 
-#include "../image/stb_image.h"
 #include "lib/glew/include/glew.h"
 #include "lib/glfw/include/glfw3.h"
 #include "../shader/LoadShaders.h"
+#include "lib/libpng/include/png.h"
 #include "NTMacro.h"
 #include "NTConstant.h"
 

@@ -13,7 +13,6 @@ void Shader::createShaderByFile(std::string fileName)
     // 创建shader程序段
     _programID = glCreateProgram();
 
-    
     // 创建定点着色器
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
     const GLchar* vertCode = FileUtils::readFile(fileName+".vert");

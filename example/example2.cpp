@@ -5,7 +5,7 @@ NT_USING_NAMESPACE
 
 namespace NT_EXAMPLE2{
 
-#define arrayNum 5
+#define arrayNum 2
 
 #include <string>
 
@@ -18,23 +18,130 @@ int mode = 1;
 
 Shader shader;
 
+FILE *check_png(std::string path)
+{
+    int number = 8;
+    unsigned char *header = new unsigned char[8];
+    FILE *fp = fopen(path.c_str(), "rb");
+    if (!fp)
+    {
+        return (FILE *)0;
+    }
+
+    if (fread(header, 1, number, fp) != number)
+    {           
+        return (FILE *)0;
+    }
+
+    if (png_sig_cmp((const unsigned char *)header, 0, number) == 0)
+    {
+        return fp;
+    }
+}
+
 void init()
 {
     shader.createShaderByFile("shader/script/triangles");
     shader.use();
     
     int width[arrayNum], height[arrayNum], nrChannels[arrayNum];
-    unsigned char *data[arrayNum];
+    png_byte* data[arrayNum];
     std::string path = "example/";
-    std::string suffixp[arrayNum] = {".jpeg", ".jpeg", ".jpeg", ".png", ".png"};
-    stbi_set_flip_vertically_on_load(true);
+    // stbi_set_flip_vertically_on_load(true);
     for (int i = 0; i < arrayNum; i++)
     {
-        std::string name = path + std::to_string(i+1) + suffixp[i];
-        unsigned char *pData = stbi_load(name.c_str(), &width[i], &height[i], &nrChannels[i], 0);
-        int length = width[i] * height[i] * nrChannels[i];
-        data[i] = new unsigned char[length];
-        memcpy(data[i], pData, length);
+        std::string name = path + std::to_string(i+1) + ".png";
+        FILE *fp = check_png(path);
+        if (fp != 0)
+        {
+            png_structp png_ptr;
+            png_infop info_ptr;
+            // 初始化libpng数据结构
+            png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+            if (!png_ptr)
+                return ;
+            info_ptr = png_create_info_struct(png_ptr);
+            if (!info_ptr)
+            {
+                png_destroy_read_struct(&png_ptr, NULL, NULL);
+                return ;
+            }
+            // 设置错误返回点
+            if (setjmp(png_jmpbuf(png_ptr)))
+            {
+                png_destroy_read_struct(&png_ptr,  NULL, NULL);
+                fclose(fp);
+                return ;
+            }
+            // 将png结构体与io流绑定
+            png_init_io(png_ptr, fp);
+            // 读取png图片
+            png_read_png(png_ptr, info_ptr, PNG_TRANSFORM_EXPAND, 0);
+            // 读取通道数 颜色类型
+            int channels, color_type;
+            // 位深度 alpha通道 宽 高 
+            int bit_depth, alpha_flag, width, height;
+            channels = png_get_channels(png_ptr, info_ptr);
+            color_type = png_get_color_type(png_ptr, info_ptr);
+            bit_depth = png_get_bit_depth(png_ptr, info_ptr);
+            width = png_get_image_width(png_ptr, info_ptr);
+            height = png_get_image_height(png_ptr, info_ptr);
+            // 读取实际rgb数据
+            png_bytepp row_pointers;
+            row_pointers = png_get_rows(png_ptr, info_ptr);
+            int size;
+            int pos = 0;
+            if (channels == 4 || color_type == PNG_COLOR_TYPE_RGB_ALPHA)
+            {
+                alpha_flag = 1;
+                size = width*height*4;
+                data[i] = (png_bytep)malloc(size);
+                if (data[i] == NULL)
+                {
+                    png_destroy_read_struct(&png_ptr, &info_ptr, 0);
+                    fclose(fp);
+                    return;
+                }
+                int temp = channels - 1;
+                for (int i = 0; i < height; i++)
+                {
+                    for (int j = 0; j < width * 4; j+=4)
+                    {
+                        for (int k = temp; k >= 0; k--)
+                        {
+                            data[i][pos++] = row_pointers[i][j + k];
+                        }                       
+                    }                   
+                }               
+            }
+            else if (channels == 3 || color_type == PNG_COLOR_TYPE_RGB)
+            {
+                alpha_flag = 2;
+                size = width*height*3;
+                data[i] = (png_bytep)malloc(size);
+                if (data[i] == NULL)
+                {
+                    png_destroy_read_struct(&png_ptr, &info_ptr, 0);
+                    fclose(fp);
+                    return;
+                }
+                int temp = 3*width;
+                for (int i = 0; i < height; i++)
+                {
+                    for (int j = 0; j < temp; j+=3)
+                    {
+                        data[i][pos++] = row_pointers[i][j+2];
+                        data[i][pos++] = row_pointers[i][j+1];
+                        data[i][pos++] = row_pointers[i][j+0];
+                    }                 
+                }
+                
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 
     glGenVertexArrays(1, &vao);
@@ -103,13 +210,6 @@ void init()
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[1], height[1], 0, GL_RGB, GL_UNSIGNED_BYTE, data[1]);
         glGenerateMipmap(GL_TEXTURE_2D);
     }
-    glActiveTexture(GL_TEXTURE1);
-    glBindTexture(GL_TEXTURE_2D, texture[4]);
-    if(data[4])
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[4], height[4], 0, GL_RGB, GL_UNSIGNED_BYTE, data[4]);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
 
     glGenBuffers(1, &vbo[1]);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo[1]);
@@ -123,7 +223,6 @@ void init()
     glEnableVertexAttribArray(vTexture);
 
     shader.setUniform1i("texture1", 0);
-    shader.setUniform1i("texture2", 1);
 
     // for(int i = 0; i < 3; i++)
     // {
@@ -137,8 +236,6 @@ void display()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture[1]);
-    glActiveTexture(GL_TEXTURE1);
-    glBindTexture(GL_TEXTURE_2D, texture[4]);
     glBindVertexArray(vao);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     shader.use();

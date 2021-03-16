@@ -11,6 +11,5 @@
 #include "event/EventManager.h"
 #include "shader/LoadShaders.h"
 #include "data/Vec_Color.h"
-#include "image/stb_image.h"
 
 #endif

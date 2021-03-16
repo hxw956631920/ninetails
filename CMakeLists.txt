@@ -35,6 +35,9 @@ LINK_DIRECTORIES(./lib/glew/prebuild)
 # glfw的库目录路径
 #LINK_DIRECTORIES(/usr/local/Cellar/glfw/3.3.2/lib)
 LINK_DIRECTORIES(./lib/glfw/prebuild)
+# zlib的库目录路径
+LINK_DIRECTORIES(/usr/local/Cellar/zlib/1.2.11/lib)
+#LINK_DIRECTORIES(./lib/zlib/prebuild)
 # libpng的库目录路径
 #LINK_DIRECTORIES(/usr/local/Cellar/libpng/1.6.37/lib)
 LINK_DIRECTORIES(./lib/libpng/prebuild)
@@ -46,7 +49,7 @@ LINK_LIBRARIES("-framework OpenGL")
 add_executable(ninetails ${SRCS} )
 
 # 添加链接库
-# 指定glew库 glfw库 libpng库 libjpeg库
+# 指定glew库 glfw库 zlib库 libpng库 libjpeg库 
 TARGET_LINK_LIBRARIES(ninetails GLEW GLFW PNG JPEG)
 TARGET_LINK_LIBRARIES(ninetails Window Object Event Shader Image Data Example)
 

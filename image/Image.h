@@ -3,7 +3,6 @@
 
 #include "../NTMacro.h"
 #include "../data/FileUtils.h"
-#include "ntlibpng.h"
 
 NT_NAMESPACE_BEGIN
 

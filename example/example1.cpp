@@ -20,9 +20,8 @@ Shader shader;
 
 void init()
 {
-    shader.createShaderByFile("../shader/script/triangles");
+    shader.createShaderByFile("shader/script/example1");
     shader.use();
-
     init1();
     init2();
     init3();
@@ -79,17 +78,17 @@ void init1()
     // Vec_Color vc(v, c);
     // Vec2(-0.90, -0.90);
     GLfloat vertices[NumVertices][3] = {
-        {-0.90, -0.90},
+        {-0.90, -0.90, 0.0},
         {1.0, 0.0, 0.0},
-        {0.85, -0.90},
+        {0.85, -0.90, 0.0},
         {0.0, 1.0, 0.0},
-        {-0.90,  0.85},
+        {-0.90, 0.85, 0.0},
         {0.0, 0.0, 1.0},
-        {0.90, -0.85},
+        {0.90, -0.85, 0.0},
         {1.0, 0.0, 0.0},
-        {0.90,  0.90},
+        {0.90, 0.90, 0.0},
         {0.0, 1.0, 0.0},
-        {-0.85,  0.90},
+        {-0.85,  0.90, 0.0},
         {0.0, 0.0, 1.0},
     };
 

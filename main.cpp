@@ -12,26 +12,18 @@ NT_USING_NAMESPACE
 #include "./example/example1.h"
 #include "./example/example2.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
-    // MainWindow *window = MainWindow::create();
-    // window->createWindow();
-    // init();
-    // window->run(display);
-    // return 0;
-
     GLFWwindow* window;
-    /* Initialize the library */
+    int example = -1;
     if (!glfwInit())
         return -1;
-    /* Create a windowed mode window and its OpenGL context */
-
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    window = glfwCreateWindow(960, 540, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(960, 540, "NineTails", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -46,10 +38,42 @@ int main(void)
         cerr << "Unable to initialize GLEW ... exiting" << endl;
         exit(1);
     }
-    // NT_EXAMPLE1::init();
-    NT_EXAMPLE2::init();
-
-    glfwSetKeyCallback(window, NT_EXAMPLE2::keyboardCallback);
+    if (argc > 1)
+    {
+        for (int i = 0; i < argc; i++)
+        {
+            if (strcmp(argv[i], "--example=1") == 0)
+            {
+                example = 1;
+                break;
+            }
+            else if (strcmp(argv[i], "--example=2") == 0)
+            {
+                example = 2;
+                break;
+            }
+        }
+        if (example == 1)
+        {
+            NT_EXAMPLE1::init();
+            glfwSetKeyCallback(window, NT_EXAMPLE1::keyboardCallback);
+        }
+        else if(example == 1)
+        {
+            NT_EXAMPLE2::init();
+            glfwSetKeyCallback(window, NT_EXAMPLE2::keyboardCallback);
+        }
+        else
+        {
+            NT_EXAMPLE1::init();
+            glfwSetKeyCallback(window, NT_EXAMPLE1::keyboardCallback);
+        }
+    }
+    else
+    {
+        NT_EXAMPLE1::init();
+        glfwSetKeyCallback(window, NT_EXAMPLE1::keyboardCallback);
+    }
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
@@ -57,7 +81,14 @@ int main(void)
         /* Swap front and back buffers */
         
         /* Poll for and process events */
-        NT_EXAMPLE2::display();
+        if (example == 1)
+        {
+            NT_EXAMPLE1::display();
+        }
+        else if (example == 1)
+        {
+            NT_EXAMPLE2::display();
+        }
         glfwSwapBuffers(window);
         glfwPollEvents();
         // std::cout << "baldwey baldwey" << endl;
