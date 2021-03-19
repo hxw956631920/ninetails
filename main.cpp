@@ -58,7 +58,7 @@ int main(int argc, char **argv)
             NT_EXAMPLE1::init();
             glfwSetKeyCallback(window, NT_EXAMPLE1::keyboardCallback);
         }
-        else if(example == 1)
+        else if(example == 2)
         {
             NT_EXAMPLE2::init();
             glfwSetKeyCallback(window, NT_EXAMPLE2::keyboardCallback);
@@ -85,7 +85,7 @@ int main(int argc, char **argv)
         {
             NT_EXAMPLE1::display();
         }
-        else if (example == 1)
+        else if (example == 2)
         {
             NT_EXAMPLE2::display();
         }

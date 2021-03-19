@@ -5,53 +5,55 @@ NT_USING_NAMESPACE
 
 namespace NT_EXAMPLE2{
 
-#define arrayNum 2
+#define arrayNum 1
 
 #include <string>
 
 GLuint vao;
 GLuint texture[arrayNum];
 GLuint vbo[2];
+GLuint ebo[2];
 
 int flag = 1;
 int mode = 1;
 
 Shader shader;
 
-FILE *check_png(std::string path)
+int check_png(std::string path, FILE **fp)
 {
     int number = 8;
     unsigned char *header = new unsigned char[8];
-    FILE *fp = fopen(path.c_str(), "rb");
-    if (!fp)
+    *fp = fopen(path.c_str(), "rb");
+    if (!(*fp))
     {
-        return (FILE *)0;
+        return 0;
     }
-
-    if (fread(header, 1, number, fp) != number)
-    {           
-        return (FILE *)0;
+    int result = fread(header, 1, number, *fp);
+    if (result != number)
+    {         
+        *fp = 0x0;
+        return 0;
     }
 
     if (png_sig_cmp((const unsigned char *)header, 0, number) == 0)
     {
-        return fp;
+        return -1;
     }
 }
 
 void init()
 {
-    shader.createShaderByFile("shader/script/triangles");
+    shader.createShaderByFile("shader/script/example2");
     shader.use();
     
     int width[arrayNum], height[arrayNum], nrChannels[arrayNum];
     png_byte* data[arrayNum];
     std::string path = "example/";
-    // stbi_set_flip_vertically_on_load(true);
     for (int i = 0; i < arrayNum; i++)
     {
         std::string name = path + std::to_string(i+1) + ".png";
-        FILE *fp = check_png(path);
+        FILE *fp;
+        check_png(name, &fp);
         if (fp != 0)
         {
             png_structp png_ptr;
@@ -73,6 +75,7 @@ void init()
                 fclose(fp);
                 return ;
             }
+            rewind(fp);
             // 将png结构体与io流绑定
             png_init_io(png_ptr, fp);
             // 读取png图片
@@ -95,7 +98,7 @@ void init()
             {
                 alpha_flag = 1;
                 size = width*height*4;
-                data[i] = (png_bytep)malloc(size);
+                data[i] = (png_bytep)malloc(size);         
                 if (data[i] == NULL)
                 {
                     png_destroy_read_struct(&png_ptr, &info_ptr, 0);
@@ -103,16 +106,16 @@ void init()
                     return;
                 }
                 int temp = channels - 1;
-                for (int i = 0; i < height; i++)
+                for (int l = 0; l < height; l++)
                 {
                     for (int j = 0; j < width * 4; j+=4)
                     {
                         for (int k = temp; k >= 0; k--)
                         {
-                            data[i][pos++] = row_pointers[i][j + k];
+                            data[i][pos++] = row_pointers[l][j + k];
                         }                       
                     }                   
-                }               
+                }                
             }
             else if (channels == 3 || color_type == PNG_COLOR_TYPE_RGB)
             {
@@ -126,16 +129,16 @@ void init()
                     return;
                 }
                 int temp = 3*width;
-                for (int i = 0; i < height; i++)
+                for (int l = 0; l < height; l++)
                 {
                     for (int j = 0; j < temp; j+=3)
                     {
-                        data[i][pos++] = row_pointers[i][j+2];
-                        data[i][pos++] = row_pointers[i][j+1];
-                        data[i][pos++] = row_pointers[i][j+0];
+                        data[i][pos++] = row_pointers[l][j+2];
+                        data[i][pos++] = row_pointers[l][j+1];
+                        data[i][pos++] = row_pointers[l][j+0];
                     }                 
                 }
-                
+                std::cout << "三通道" << std::endl;             
             }
             else
             {
@@ -164,56 +167,26 @@ void init()
         1.0, 0.0, 0.0,
         0.0f, 1.0f,
     };
+    glGenBuffers(1, &vbo[0]);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     GLuint element[] = {
         0, 1, 2,
         0, 2, 3
     };
+    glGenBuffers(1, &ebo[0]);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo[0]);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(element), element, GL_STATIC_DRAW);
 
-    glGenBuffers(1, &vbo[0]);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    glGenTextures(arrayNum, texture);
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // for(int i = 0; i < arrayNum; i++)
-    // {
-    //     glActiveTexture(i);
-    //     glBindTexture(GL_TEXTURE_2D, texture[i]);
-    //     // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
-    //     // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
-    //     // GLfloat borderColor[] = { 1.0f, 1.0f, 0.0f, 1.0f };
-    //     // glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
-    //     if(data[i])
-    //     {
-    //         // std::cout << width[i] << height[i] << nrChannels[i] << std::endl;
-    //         if(nrChannels[i] == 3)
-    //         {
-    //             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[i], height[i], 0, GL_RGB, GL_UNSIGNED_BYTE, data[i]);
-    //             glGenerateMipmap(GL_TEXTURE_2D);
-    //         }
-    //         else if(nrChannels[i] == 4)
-    //         {
-    //             std::cout << "rgba" << endl;
-    //             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[i], height[i], 0, GL_RGBA, GL_UNSIGNED_BYTE, data[i]);
-    //             glGenerateMipmap(GL_TEXTURE_2D);
-    //         }
-    //     }
-    // }
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, texture[1]);
-    if(data[1])
+    glGenTextures(1, &texture[0]);
+    // glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture[0]);
+    if(data[0])
     {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[1], height[1], 0, GL_RGB, GL_UNSIGNED_BYTE, data[1]);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[0], height[0], 0, GL_RGBA, GL_UNSIGNED_BYTE, data[0]);
         glGenerateMipmap(GL_TEXTURE_2D);
     }
-
-    glGenBuffers(1, &vbo[1]);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo[1]);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(element), element, GL_STATIC_DRAW);
 
     glVertexAttribPointer(vPosition, 3, GL_FLOAT, GL_FALSE, 8*sizeof(GL_FLOAT), BUFFER_OFFSET(0));
     glEnableVertexAttribArray(vPosition);
@@ -232,11 +205,12 @@ void init()
 
 void display()
 {
-    glClearColor(1.0, 1.0, 1.0, 1.0);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, texture[1]);
+    // glClearColor(1.0, 1.0, 1.0, 1.0);
+    // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glBindVertexArray(vao);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture[0]);
+    // glDrawArrays(GL_TRIANGLE_STRIP, 0, 12);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     shader.use();
     glFlush();
