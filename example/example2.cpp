@@ -1,4 +1,6 @@
 #include "example2.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "../image/stb_image.h"
 
 using namespace NT_EXAMPLE2;
 NT_USING_NAMESPACE
@@ -47,104 +49,107 @@ void init()
     shader.use();
     
     int width[arrayNum], height[arrayNum], nrChannels[arrayNum];
-    png_byte* data[arrayNum];
+    // png_byte* data[arrayNum];
+    unsigned char *data[arrayNum];
     std::string path = "example/";
     for (int i = 0; i < arrayNum; i++)
     {
-        std::string name = path + std::to_string(i+1) + ".png";
-        FILE *fp;
-        check_png(name, &fp);
-        if (fp != 0)
-        {
-            png_structp png_ptr;
-            png_infop info_ptr;
-            // 初始化libpng数据结构
-            png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
-            if (!png_ptr)
-                return ;
-            info_ptr = png_create_info_struct(png_ptr);
-            if (!info_ptr)
-            {
-                png_destroy_read_struct(&png_ptr, NULL, NULL);
-                return ;
-            }
-            // 设置错误返回点
-            if (setjmp(png_jmpbuf(png_ptr)))
-            {
-                png_destroy_read_struct(&png_ptr,  NULL, NULL);
-                fclose(fp);
-                return ;
-            }
-            rewind(fp);
-            // 将png结构体与io流绑定
-            png_init_io(png_ptr, fp);
-            // 读取png图片
-            png_read_png(png_ptr, info_ptr, PNG_TRANSFORM_EXPAND, 0);
-            // 读取通道数 颜色类型
-            int channels, color_type;
-            // 位深度 alpha通道 宽 高 
-            int bit_depth, alpha_flag, width, height;
-            channels = png_get_channels(png_ptr, info_ptr);
-            color_type = png_get_color_type(png_ptr, info_ptr);
-            bit_depth = png_get_bit_depth(png_ptr, info_ptr);
-            width = png_get_image_width(png_ptr, info_ptr);
-            height = png_get_image_height(png_ptr, info_ptr);
-            // 读取实际rgb数据
-            png_bytepp row_pointers;
-            row_pointers = png_get_rows(png_ptr, info_ptr);
-            int size;
-            int pos = 0;
-            if (channels == 4 || color_type == PNG_COLOR_TYPE_RGB_ALPHA)
-            {
-                alpha_flag = 1;
-                size = width*height*4;
-                data[i] = (png_bytep)malloc(size);         
-                if (data[i] == NULL)
-                {
-                    png_destroy_read_struct(&png_ptr, &info_ptr, 0);
-                    fclose(fp);
-                    return;
-                }
-                int temp = channels - 1;
-                for (int l = 0; l < height; l++)
-                {
-                    for (int j = 0; j < width * 4; j+=4)
-                    {
-                        for (int k = temp; k >= 0; k--)
-                        {
-                            data[i][pos++] = row_pointers[l][j + k];
-                        }                       
-                    }                   
-                }                
-            }
-            else if (channels == 3 || color_type == PNG_COLOR_TYPE_RGB)
-            {
-                alpha_flag = 2;
-                size = width*height*3;
-                data[i] = (png_bytep)malloc(size);
-                if (data[i] == NULL)
-                {
-                    png_destroy_read_struct(&png_ptr, &info_ptr, 0);
-                    fclose(fp);
-                    return;
-                }
-                int temp = 3*width;
-                for (int l = 0; l < height; l++)
-                {
-                    for (int j = 0; j < temp; j+=3)
-                    {
-                        data[i][pos++] = row_pointers[l][j+2];
-                        data[i][pos++] = row_pointers[l][j+1];
-                        data[i][pos++] = row_pointers[l][j+0];
-                    }                 
-                }
-                std::cout << "三通道" << std::endl;             
-            }
-            else
-            {
-                return;
-            }
-        }
+        // std::string name = path + std::to_string(i+1) + ".jpg";
+        std::string name = path + "3.jpg";
+        data[i] = stbi_load(name.c_str(), &width, &height, &nrChannels, 0); 
+        // FILE *fp;
+        // check_png(name, &fp);
+        // if (fp != 0)
+        // {
+        //     png_structp png_ptr;
+        //     png_infop info_ptr;
+        //     // 初始化libpng数据结构
+        //     png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+        //     if (!png_ptr)
+        //         return ;
+        //     info_ptr = png_create_info_struct(png_ptr);
+        //     if (!info_ptr)
+        //     {
+        //         png_destroy_read_struct(&png_ptr, NULL, NULL);
+        //         return ;
+        //     }
+        //     // 设置错误返回点
+        //     if (setjmp(png_jmpbuf(png_ptr)))
+        //     {
+        //         png_destroy_read_struct(&png_ptr,  NULL, NULL);
+        //         fclose(fp);
+        //         return ;
+        //     }
+        //     rewind(fp);
+        //     // 将png结构体与io流绑定
+        //     png_init_io(png_ptr, fp);
+        //     // 读取png图片
+        //     png_read_png(png_ptr, info_ptr, PNG_TRANSFORM_EXPAND, 0);
+        //     // 读取通道数 颜色类型
+        //     int channels, color_type;
+        //     // 位深度 alpha通道 宽 高 
+        //     int bit_depth, alpha_flag, width, height;
+        //     channels = png_get_channels(png_ptr, info_ptr);
+        //     color_type = png_get_color_type(png_ptr, info_ptr);
+        //     bit_depth = png_get_bit_depth(png_ptr, info_ptr);
+        //     width = png_get_image_width(png_ptr, info_ptr);
+        //     height = png_get_image_height(png_ptr, info_ptr);
+        //     // 读取实际rgb数据
+        //     png_bytepp row_pointers;
+        //     row_pointers = png_get_rows(png_ptr, info_ptr);
+        //     int size;
+        //     int pos = 0;
+        //     if (channels == 4 || color_type == PNG_COLOR_TYPE_RGB_ALPHA)
+        //     {
+        //         alpha_flag = 1;
+        //         size = width*height*4;
+        //         data[i] = (png_bytep)malloc(size);         
+        //         if (data[i] == NULL)
+        //         {
+        //             png_destroy_read_struct(&png_ptr, &info_ptr, 0);
+        //             fclose(fp);
+        //             return;
+        //         }
+        //         int temp = channels - 1;
+        //         for (int l = 0; l < height; l++)
+        //         {
+        //             for (int j = 0; j < width * 4; j+=4)
+        //             {
+        //                 for (int k = temp; k >= 0; k--)
+        //                 {
+        //                     data[i][pos++] = row_pointers[l][j + k];
+        //                 }                       
+        //             }                   
+        //         }                
+        //     }
+        //     else if (channels == 3 || color_type == PNG_COLOR_TYPE_RGB)
+        //     {
+        //         alpha_flag = 2;
+        //         size = width*height*3;
+        //         data[i] = (png_bytep)malloc(size);
+        //         if (data[i] == NULL)
+        //         {
+        //             png_destroy_read_struct(&png_ptr, &info_ptr, 0);
+        //             fclose(fp);
+        //             return;
+        //         }
+        //         int temp = 3*width;
+        //         for (int l = 0; l < height; l++)
+        //         {
+        //             for (int j = 0; j < temp; j+=3)
+        //             {
+        //                 data[i][pos++] = row_pointers[l][j+2];
+        //                 data[i][pos++] = row_pointers[l][j+1];
+        //                 data[i][pos++] = row_pointers[l][j+0];
+        //             }                 
+        //         }
+        //         std::cout << "三通道" << std::endl;             
+        //     }
+        //     else
+        //     {
+        //         return;
+        //     }
+        // }
     }
 
     glGenVertexArrays(1, &vao);
@@ -184,7 +189,7 @@ void init()
     glBindTexture(GL_TEXTURE_2D, texture[0]);
     if(data[0])
     {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[0], height[0], 0, GL_RGBA, GL_UNSIGNED_BYTE, data[0]);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[0], height[0], 0, GL_RGB, GL_UNSIGNED_BYTE, data[0]);
         glGenerateMipmap(GL_TEXTURE_2D);
     }
 
